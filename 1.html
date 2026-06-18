@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SplitWise Premium | Effortless Expense Sharing</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Geist:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#0566d9",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004395",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#001a42",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "inverse-on-surface": "#313030",
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-tertiary-container": "#7342dd",
+                        "on-primary-fixed-variant": "#454747",
+                        "tertiary-container": "#e9ddff",
+                        "outline-variant": "#444748",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#5d5f5f",
+                        "on-secondary-container": "#e6ecff",
+                        "outline": "#8e9192",
+                        "on-secondary": "#002e6a",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed": "#23005c",
+                        "on-primary-container": "#636565",
+                        "on-tertiary": "#3c0091",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#ffffff",
+                        "surface-tint": "#c6c6c7",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "primary": "#ffffff",
+                        "surface": "#131313",
+                        "on-primary": "#2f3131",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary-container": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#5516be",
+                        "primary-fixed": "#e2e2e2",
+                        "background": "#131313",
+                        "secondary": "#adc6ff",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.8rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "8px",
+                        "gutter": "20px",
+                        "margin-desktop": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "mono-sm": ["Geist"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono-sm": ["13px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bento-card {
+            background: #0A0A0A;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .emerald-glow {
+            box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 7s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 w-full glass">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-gutter py-md">
+            <div class="flex items-center gap-sm">
+                <span
+                    class="text-headline-md font-headline-md font-extrabold text-primary tracking-tighter">SplitWise</span>
+            </div>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-xl text-label-md font-label-md">
+                <a class="nav-item text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+                <a class="nav-item text-on-surface-variant hover:text-primary transition-colors"
+                    href="#features">Features</a>
+                <a class="nav-item text-on-surface-variant hover:text-primary transition-colors"
+                    href="#how-it-works">How It Works</a>
+                <a class="nav-item text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
+                <a class="nav-item text-on-surface-variant hover:text-primary transition-colors"
+                    href="#contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-md">
+                <button
+                    class="hidden sm:block text-label-md font-label-md px-md py-sm border border-outline-variant rounded-lg hover:bg-white/5 transition-all">Login</button>
+                <button
+                    class="bg-primary text-on-primary text-label-md font-label-md px-lg py-sm rounded-lg hover:scale-105 active:scale-95 transition-all">Sign
+                    Up</button>
+            </div>
+        </div>
+    </nav>
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 px-gutter overflow-hidden">
+            <div class="absolute inset-0 z-0 pointer-events-none">
+
+            </div>
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-xl items-center relative z-10">
+                <div class="space-y-lg text-center lg:text-left">
+                    <span
+                        class="inline-block px-md py-sm rounded-full bg-white/5 border border-white/10 text-label-md font-mono-sm text-secondary">PREMIUM
+                        FINTECH SOLUTIONS</span>
+                    <h1 class="text-display font-display tracking-tight leading-none text-primary">
+                        Split Expenses <br />
+                        <span class="text-on-surface-variant">Effortlessly</span> with <br />
+                        Friends &amp; Groups
+                    </h1>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
+                        Track shared expenses, manage balances, and settle debts easily with a smart and transparent
+                        expense-sharing platform. Built for the modern user.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-md pt-md">
+                        <button
+                            class="w-full sm:w-auto bg-primary text-on-primary px-xl py-lg rounded-xl font-headline-md text-headline-md hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all">Get
+                            Started</button>
+                        <button
+                            class="w-full sm:w-auto glass px-xl py-lg rounded-xl font-headline-md text-headline-md hover:bg-white/10 transition-all">Learn
+                            More</button>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block h-[600px]">
+                    <!-- Floating Cards -->
+                    <div class="absolute top-10 right-0 w-80 glass p-lg rounded-xl animate-float emerald-glow z-20">
+                        <div class="flex justify-between items-center mb-md">
+                            <span class="material-symbols-outlined text-secondary">payments</span>
+                            <span
+                                class="text-label-md font-mono-sm bg-emerald-500/10 text-emerald-400 px-sm py-xs rounded">PAID</span>
+                        </div>
+                        <p class="text-body-sm font-body-sm text-on-surface-variant">Dinner at Sky Lounge</p>
+                        <p class="text-headline-md font-headline-md text-primary">₹4,250.00</p>
+                        <div class="mt-md flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-label-md">
+                                JD</div>
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-label-md">
+                                AS</div>
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-label-md">
+                                +3</div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-20 left-0 w-72 glass p-lg rounded-xl animate-float-delayed z-10">
+                        <div class="flex items-center gap-sm mb-md">
+                            <div class="p-xs bg-secondary-container rounded-lg">
+                                <span class="material-symbols-outlined text-primary text-md">group</span>
+                            </div>
+                            <span class="text-label-md font-label-md">Road Trip Group</span>
+                        </div>
+                        <div class="space-y-sm">
+                            <div class="flex justify-between text-body-sm">
+                                <span>You are owed</span>
+                                <span class="text-emerald-400">₹12,400</span>
+                            </div>
+                            <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-emerald-400 h-full w-2/3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] border border-white/5 rounded-3xl overflow-hidden opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="A high-fidelity dashboard UI mockup showing complex financial charts, expense breakdowns, and user activity in a dark, minimalist aesthetic with glassmorphic elements and neon accents."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjMaEoMYqGnSNgxqideyTiMWZZrzXybdIn-X1TUZgTfdxY6WKw60KdPTISSIPDkG3_VZiY8pMJxVIbZSKiPuHpl91C_obT8iDdfU2hDlxDW8kJDAIXAoP3pXJOPas1I4aztQNBf6UPZs0q8D4_DyWGt_Ks2XMp9fTGIF7Vd0DJuWYPB50nL4viDpGpfKF_ZnjgRHeeY09CC1KiQbiamTqXLKy7rIDsPLEnoz5vBd5zZidnXbrOmolq8JP0jFWKlM-cyahhg-XTWpM')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Statistics -->
+        <section class="py-xl border-y border-white/5 bg-surface-container-lowest/50 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-lg">
+                <div class="text-center group">
+                    <div class="text-display font-display text-primary group-hover:scale-110 transition-transform duration-500"
+                        data-target="10000">10k+</div>
+                    <div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Active
+                        Users</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-display font-display text-primary group-hover:scale-110 transition-transform duration-500"
+                        data-target="100000">100k+</div>
+                    <div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Expenses
+                        Split</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-display font-display text-primary group-hover:scale-110 transition-transform duration-500"
+                        data-target="50000000">₹50M+</div>
+                    <div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">
+                        Transactions</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-display font-display text-primary group-hover:scale-110 transition-transform duration-500"
+                        data-target="5000">5k+</div>
+                    <div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Smart
+                        Groups</div>
+                </div>
+            </div>
+        </section>
+        <!-- Problem Section -->
+        <section class="py-32 px-gutter max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-headline-lg font-headline-lg text-primary mb-md">Managing Shared Expenses <br /><span
+                        class="text-on-surface-variant">Shouldn't Be Complicated</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-md">
+                <div class="bento-card p-xl rounded-xl">
+                    <span class="material-symbols-outlined text-error text-3xl mb-md">event_busy</span>
+                    <h3 class="text-headline-md font-headline-md text-primary mb-sm">Forgotten Payments</h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant">Never lose track of who owes who.
+                        Automatic reminders keep everyone accountable.</p>
+                </div>
+                <div class="bento-card p-xl rounded-xl">
+                    <span class="material-symbols-outlined text-secondary text-3xl mb-md">rule</span>
+                    <h3 class="text-headline-md font-headline-md text-primary mb-sm">Unequal Tracking</h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant">Whether it's percentages or exact
+                        amounts, handle any split scenario perfectly.</p>
+                </div>
+                <div class="bento-card p-xl rounded-xl">
+                    <span class="material-symbols-outlined text-on-tertiary-container text-3xl mb-md">calculate</span>
+                    <h3 class="text-headline-md font-headline-md text-primary mb-sm">Confusing Math</h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant">Let our algorithms do the heavy
+                        lifting. Transparent math for peace of mind.</p>
+                </div>
+                <div class="bento-card p-xl rounded-xl">
+                    <span class="material-symbols-outlined text-emerald-400 text-3xl mb-md">visibility_off</span>
+                    <h3 class="text-headline-md font-headline-md text-primary mb-sm">No Transparency</h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant">Full history and real-time updates mean
+                        zero disputes over shared costs.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Features Grid -->
+        <section class="py-32 bg-surface-container-low/30 relative" id="features">
+            <div class="max-w-7xl mx-auto px-gutter">
+                <div class="flex justify-between items-end mb-24">
+                    <div>
+                        <span
+                            class="text-label-md font-mono-sm text-secondary uppercase tracking-widest">Capabilities</span>
+                        <h2 class="text-headline-lg font-headline-lg text-primary mt-sm">Built for High-Fidelity
+                            Tracking</h2>
+                    </div>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant max-w-sm hidden md:block">
+                        Powerful tools to manage every aspect of your shared financial life with precision.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-md">
+                    <!-- Feature 1 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">groups</span></div>
+                        <h4 class="font-headline-md text-primary">Group Management</h4>
+                        <p class="text-body-sm text-on-surface-variant">Create separate groups for travel, roommates, or
+                            events with custom avatars.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">receipt_long</span></div>
+                        <h4 class="font-headline-md text-primary">Expense Tracking</h4>
+                        <p class="text-body-sm text-on-surface-variant">Log expenses in any currency and attach images
+                            of receipts instantly.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">call_split</span></div>
+                        <h4 class="font-headline-md text-primary">Smart Splitting</h4>
+                        <p class="text-body-sm text-on-surface-variant">Split by shares, percentages, or exact amounts
+                            with ease.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">account_balance_wallet</span></div>
+                        <h4 class="font-headline-md text-primary">Balance Management</h4>
+                        <p class="text-body-sm text-on-surface-variant">Instantly see who owes you and who you owe
+                            across all groups.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">history</span></div>
+                        <h4 class="font-headline-md text-primary">Payment History</h4>
+                        <p class="text-body-sm text-on-surface-variant">Comprehensive logs of every transaction and
+                            settlement made.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">analytics</span></div>
+                        <h4 class="font-headline-md text-primary">Advanced Analytics</h4>
+                        <p class="text-body-sm text-on-surface-variant">Visualize your spending patterns with beautiful,
+                            interactive charts.</p>
+                    </div>
+                    <!-- Feature 7 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">notifications_active</span></div>
+                        <h4 class="font-headline-md text-primary">Smart Alerts</h4>
+                        <p class="text-body-sm text-on-surface-variant">Real-time push notifications for new expenses
+                            and settlements.</p>
+                    </div>
+                    <!-- Feature 8 -->
+                    <div class="bento-card p-lg rounded-xl flex flex-col gap-md">
+                        <div class="p-sm bg-white/5 w-fit rounded-lg"><span
+                                class="material-symbols-outlined text-primary">verified_user</span></div>
+                        <h4 class="font-headline-md text-primary">Secure Account</h4>
+                        <p class="text-body-sm text-on-surface-variant">Bank-grade encryption and 2FA to keep your
+                            financial data private.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How It Works Timeline -->
+        <section class="py-32 px-gutter max-w-7xl mx-auto" id="how-it-works">
+            <div class="text-center mb-24">
+                <h2 class="text-headline-lg font-headline-lg text-primary">Settling Up in Seconds</h2>
+                <p class="text-body-lg text-on-surface-variant mt-sm">A seamless journey from registration to
+                    resolution.</p>
+            </div>
+            <div class="relative">
+                <!-- Line -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-white/5 -translate-y-1/2 hidden md:block"></div>
+                <div class="grid md:grid-cols-5 gap-xl relative z-10">
+                    <div class="text-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center mx-auto mb-md group-hover:border-primary transition-colors">
+                            <span class="text-headline-md font-headline-md text-primary">1</span>
+                        </div>
+                        <h5 class="font-headline-md text-primary mb-xs">Create Account</h5>
+                        <p class="text-body-sm text-on-surface-variant">Join SplitWise in under 60 seconds.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center mx-auto mb-md group-hover:border-primary transition-colors">
+                            <span class="text-headline-md font-headline-md text-primary">2</span>
+                        </div>
+                        <h5 class="font-headline-md text-primary mb-xs">Add Friends</h5>
+                        <p class="text-body-sm text-on-surface-variant">Invite via email or contact list.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center mx-auto mb-md group-hover:border-primary transition-colors">
+                            <span class="text-headline-md font-headline-md text-primary">3</span>
+                        </div>
+                        <h5 class="font-headline-md text-primary mb-xs">Add Expenses</h5>
+                        <p class="text-body-sm text-on-surface-variant">Log what you spent, where, and when.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center mx-auto mb-md group-hover:border-primary transition-colors">
+                            <span class="text-headline-md font-headline-md text-primary">4</span>
+                        </div>
+                        <h5 class="font-headline-md text-primary mb-xs">Split Costs</h5>
+                        <p class="text-body-sm text-on-surface-variant">Let the app calculate everyone's share.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center mx-auto mb-md group-hover:border-primary transition-colors">
+                            <span class="text-headline-md font-headline-md text-primary">5</span>
+                        </div>
+                        <h5 class="font-headline-md text-primary mb-xs">Settle Up</h5>
+                        <p class="text-body-sm text-on-surface-variant">Pay directly or record cash payments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Preview -->
+        <section class="py-32 bg-black overflow-hidden">
+            <div class="max-w-7xl mx-auto px-gutter">
+                <div class="relative h-[600px] flex items-center justify-center">
+                    <div
+                        class="absolute z-30 transform -rotate-6 translate-x-[-150px] translate-y-[50px] w-[600px] aspect-video glass rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:rotate-0 hover:translate-x-0 transition-all duration-700">
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="A clean, minimalist mobile app screen showing a list of expense groups like Travel, Home, and Night Out. Each item has a progress bar and small profile avatars of members in a sleek dark theme."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvgIk819ZriBbe-0S5ASZOlNIwzKkmY14KECiZzcqmEl-yub0jrCwPryKi6ouzRTRpwU1ha0r1-w86QeXHusBEHd8xIGuPGPRsY0eNGFISikFZ1hFDlLliSFNlvDvdd3fw5Kulu_-fqDxpaTQOL7yfFqLz3Gqvnq25fHtyrobc9fyaPo9dz43WTRL2pqm1za4lJzPbm_8VHxBlKCDwlof2kO34RTh5YETrUE9qbbShLwOgARh-9kzGF5NPdIxLrhYSgM5zFRdoyhU')">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute z-20 transform scale-110 w-[800px] aspect-video glass rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="A high-end desktop dashboard interface featuring a large financial summary card with green and red indicators for 'You are owed' and 'You owe'. Beautiful glassmorphic charts and a minimalist activity feed are visible."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZ9ha5KRFcSBCnT4W_d26_d82kwB7F1YUqd4ZSKpSKak-zYh6sq2tWHEQnfksG7G0W0EJbWxvcO_yYUWYyhxrij7tbRKSQ_d3wjxGhw92s16WsSmcAkr6IpCr0WF4VZNk-c6fGS_lFUWFWh30gQsdOmqmGCLAdhMfiWL7O5dxfsUq-hZmE3xoJZ9t77HRqnPT2xltsMwD9kyRyjrLNeqcDrQxnT5EEU__qOaZtg1s4ScynDJza-86DEAaCNqjMFlGk_kMfFn6iY5k')">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute z-30 transform rotate-6 translate-x-[150px] translate-y-[80px] w-[600px] aspect-video glass rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:rotate-0 hover:translate-x-0 transition-all duration-700">
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="An analytics view with detailed bar graphs and pie charts representing monthly spending categories like Groceries, Rent, and Leisure in a sophisticated dark palette with vibrant accent colors."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6wz_rb2u61R3fVD3l0YRT5j3fiD-ytwQ9-2E-CduEyjzXuA9s0o7lyXI3AZ-rHdvnq1OzruD0N7NrzBhr3Zzo_W2K0IUeSZtD2brhXiQ1DfNJaW68OHNXmlZsFdC3xdxGRzzIHxrwpZVHElb8hRMnknUZZIQJPH6uqkeBQT88_y_-6AVW2NPNclu_KffkCukF9qxE3UA1z08mnSMMeSQFcG9U1Qp_Jwr9qaWKsNBKL8Nd-UPxMdESwJoOi04mtDFdWh8XeK_X2Gw')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="py-32 px-gutter max-w-7xl mx-auto">
+            <h2 class="text-headline-lg font-headline-lg text-center mb-24">Trusted by 10,000+ Teams</h2>
+            <div class="grid md:grid-cols-3 gap-lg">
+                <div class="bento-card p-xl rounded-2xl">
+                    <div class="flex gap-xs mb-md">
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-body-lg italic mb-lg text-on-surface">"SplitWise transformed how our travel group
+                        handles finances. No more awkward conversations about money after a great trip."</p>
+                    <div class="flex items-center gap-md">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A professional headshot of a young entrepreneur, clean studio lighting, high-end commercial aesthetic, smiling, dark background."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEyumR4EfLjqXMpvKnCo8UPA7eE0jEOW9HudBdw1DPBPbOATGBiQHJDzA81U99QqldT0aTKIBhBvwvfbZHzh58SYiLMtV_CsKUTcymjGM-rBfu8B6uHx9n-sau-cQayHWmsxdgBp_R_oC1H0eC14peCFAQqhmXfadIuPZY4No-PCdsNDs4FHDspqegLRRpyXmWvYS431tjOBXB362h1hc71es2ojM1fammtqI69fF1KaSFsPoZwfhGKGnR_K00XppEpd1RhhYND-I" />
+                        </div>
+                        <div>
+                            <p class="font-headline-md text-primary">Sarah Chen</p>
+                            <p class="text-label-md text-on-surface-variant">Digital Nomad</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- More testimonials... -->
+                <div class="bento-card p-xl rounded-2xl">
+                    <div class="flex gap-xs mb-md">
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-body-lg italic mb-lg text-on-surface">"The cleanest UI I've seen in a fintech app. It
+                        actually makes expense tracking... fun? Incredible job by the team."</p>
+                    <div class="flex items-center gap-md">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A sharp, modern portrait of a creative director in a minimalist studio. High contrast black and white photography, sophisticated and professional vibe."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCGxoFL4FDGcL6gyeezNmtcVdOVPJL6dTGE5QlQhPSmbTF4Y6DnCGHL9BUgB06Q1tQjHK5m06eAbcFDDlVxYh0O4zCn-rZ6o9hD0VC84Vem6Q3I1dyTITh5YTNGCrhNwsRxQU95dQhfWzD0FoGVwH2VcdxxqhVEg_epog6wm3WH1bqOf2YYdHMSKG7mm1_YdKKkld1ffBBYnTpewZbkHWz66LzYGp1l5h2fr4MuCYEw1U3LB0cFOFu-gJPFEFrAMxeLHGnAJo3sX4" />
+                        </div>
+                        <div>
+                            <p class="font-headline-md text-primary">Marcus Thorne</p>
+                            <p class="text-label-md text-on-surface-variant">Creative Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-card p-xl rounded-2xl">
+                    <div class="flex gap-xs mb-md">
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-body-lg italic mb-lg text-on-surface">"Reliable, fast, and transparent. We use it for
+                        our office snacks and outings. It's an essential part of our team toolkit."</p>
+                    <div class="flex items-center gap-md">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A warm and friendly portrait of a project manager, natural lighting, modern office setting background blurred, professional fintech style."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9WkStcWhK5mjlCKmnByQSoBlADnCZ1ldzQQoRRLAVS7dwajFMdsQxPia_cDZC1r7qwdPTAOq0ppOGBTgc3qIAwfRds_X4Wnq4lSDnEy-3PIeTXDPhbX6Y71oDq4GoHcKpnHHjZ0HY4qEn9B7ASqjHM3rKiIRPmOWdMhzr4X-Ebseq9wASdv7gMNPkVfxY0rhTVNZq1ksceT_32g05Xrj46KqvYzRMEqeUU86X8P8ZWO-gCF_HYYqH8-Fb7lbCnw7_wzII9a_R-Ig" />
+                        </div>
+                        <div>
+                            <p class="font-headline-md text-primary">Elena Rodriguez</p>
+                            <p class="text-label-md text-on-surface-variant">Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Accordion -->
+        <section class="py-32 px-gutter max-w-3xl mx-auto" id="faq">
+            <h2 class="text-headline-lg font-headline-lg text-center mb-24 text-primary">Frequently Asked Questions</h2>
+            <div class="space-y-md">
+                <div class="bento-card rounded-xl overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-lg text-left" onclick="toggleFaq(this)">
+                        <span class="font-headline-md text-primary">Is SplitWise free to use?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="hidden px-lg pb-lg text-on-surface-variant">
+                        Yes, our core features are free for everyone. We offer a Premium tier for advanced analytics,
+                        receipt OCR, and priority support.
+                    </div>
+                </div>
+                <div class="bento-card rounded-xl overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-lg text-left" onclick="toggleFaq(this)">
+                        <span class="font-headline-md text-primary">How secure is my financial data?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="hidden px-lg pb-lg text-on-surface-variant">
+                        We use AES-256 encryption for all data at rest and TLS for data in transit. We never sell your
+                        personal information.
+                    </div>
+                </div>
+                <div class="bento-card rounded-xl overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-lg text-left" onclick="toggleFaq(this)">
+                        <span class="font-headline-md text-primary">Can I use it with any currency?</span>
+                        <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                    </button>
+                    <div class="hidden px-lg pb-lg text-on-surface-variant">
+                        Absolutely. SplitWise supports over 150 currencies and automatically calculates conversion rates
+                        for settlements.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-32 px-gutter">
+            <div class="max-w-7xl mx-auto relative rounded-3xl overflow-hidden p-32 text-center">
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-secondary-container/30 via-background to-on-tertiary-fixed-variant/20">
+                    </div>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-display font-display mb-lg text-primary">Start Managing Shared <br />Expenses
+                        Smarter</h2>
+                    <p class="text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">Join thousands of users who
+                        have already simplified their financial lives. Create your free account today.</p>
+                    <button
+                        class="bg-primary text-on-primary px-32 py-lg rounded-xl font-headline-md text-headline-md hover:scale-105 transition-all">Create
+                        Free Account</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-white/5 py-xl">
+        <div class="max-w-7xl mx-auto px-gutter">
+            <div class="grid md:grid-cols-4 gap-xl mb-32">
+                <div class="space-y-md">
+                    <span class="text-headline-md font-headline-md font-extrabold text-primary">SplitWise</span>
+                    <p class="text-body-sm text-on-surface-variant">The world-class expense sharing platform for
+                        high-performance teams and friend groups.</p>
+                    <div class="flex gap-md">
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">alternate_email</span>
+                        <span
+                            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">chat</span>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="font-headline-md text-primary mb-lg">Product</h6>
+                    <ul class="space-y-sm text-label-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Features</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Integrations</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Enterprise</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-headline-md text-primary mb-lg">Support</h6>
+                    <ul class="space-y-sm text-label-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Security</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">API Docs</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-headline-md text-primary mb-lg">Legal</h6>
+                    <ul class="space-y-sm text-label-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-md pt-lg border-t border-white/5">
+                <p class="text-label-md text-on-surface-variant">© 2024 SplitWise Premium. All rights reserved.</p>
+                <div class="flex gap-lg">
+                    <span class="text-label-md text-on-surface-variant">Made with precision.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+
+            const isOpen = !content.classList.contains('hidden');
+
+            // Close all
+            document.querySelectorAll('#faq .hidden').forEach(el => {
+                if (el !== content) el.classList.add('hidden');
+            });
+            document.querySelectorAll('#faq .rotate-180').forEach(el => el.classList.remove('rotate-180'));
+
+            if (isOpen) {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            } else {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Simple Intersection Observer for Fade-ins
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Counter Animation Simulation
+        document.querySelectorAll('[data-target]').forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText.replace(/[^0-9]/g, '');
+                const speed = 200;
+                const inc = target / speed;
+
+                if (count < target) {
+                    // This is a simplified display logic for the mockup
+                    // In real implementation, format back to 10k+, 50M+, etc.
+                }
+            };
+            updateCount();
+        });
+    </script>
+</body>
+
+</html>
