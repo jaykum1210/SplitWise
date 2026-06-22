@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> .testimonial-controls{ display:flex; align-items:center; gap:20px; margin-bottom:40px; } .testimonial-controls button{ width:55px; height:55px; border:none; border-radius:50%; background:#141414; color:#fff; cursor:pointer; font-size:20px; } .progress-bar{ flex:1; height:4px; background:#222; border-radius:20px; overflow:hidden; } .progress{ height:100%; width:0%; background:#00ff99; transition:6s linear; } .testimonial-slider{ overflow:hidden; } .testimonial-track{ display:flex; gap:24px; transition:1s ease; } .testimonial-card{ min-width:calc((100% - 72px)/4); background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px; } .stars{ margin-bottom:20px; } .testimonial-card p{ line-height:1.8; margin-bottom:20px; } </style>
+</head>
+
+<body>
+    <section class="testimonials-section">
+        <div class="section-header">
+            <span class="section-tag">💬 TESTIMONIALS</span>
+            <h2>Loved by Groups,<br>Trusted Every Day</h2>
+            <p>
+                From roommates and travelers to families and teams, people rely on
+                SplitWise to keep shared expenses simple, transparent, and stress-free.
+            </p>
+        </div>
+
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Our Bali trip had 12 people and countless expenses. SplitWise made everything effortless."</p>
+                    <h4>Sarah Johnson</h4>
+                    <span>Trip Planner</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Tracking rent, groceries, and utilities has never been easier."</p>
+                    <h4>Alex Carter</h4>
+                    <span>Roommate</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The best app for group trips. Everyone knows exactly who owes what."</p>
+                    <h4>Emma Wilson</h4>
+                    <span>Frequent Traveler</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Perfect for office lunches and team outings."</p>
+                    <h4>David Lee</h4>
+                    <span>Team Lead</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Managing household expenses with my family is now stress-free."</p>
+                    <h4>Sophia Brown</h4>
+                    <span>Family Manager</span>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Living with roommates became much easier."</p>
+                    <h4>Michael Scott</h4>
+                    <span>College Student</span>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Whether it's birthdays or parties, SplitWise keeps everyone on the same page."</p>
+                    <h4>Olivia Martinez</h4>
+                    <span>Event Organizer</span>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"A must-have app for every trip."</p>
+                    <h4>Ethan Miller</h4>
+                    <span>Adventure Traveler</span>
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prev">←</button>
+
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <button id="next">→</button>
+                </div>
+
+                <div class="testimonial-slider">
+                    <div class="testimonial-track">
+                        <!-- cards -->
+                    </div>
+                </div>
+
+                <!-- Duplicate cards for infinite effect -->
+                <!-- Copy the same cards again -->
+            </div>
+        </div>
+
+        <div class="bottom-tagline">
+            <h3>Join Thousands of Users</h3>
+            <p>Who Split Smarter and Settle Faster</p>
+        </div>
+    </section>
+</body>
+<script> const track = document.querySelector(".testimonial-track"); track.innerHTML += track.innerHTML; const cards = document.querySelectorAll(".testimonial-card"); const nextBtn = document.getElementById("next"); const prevBtn = document.getElementById("prev"); const progress = document.querySelector(".progress"); let currentIndex = 0; function updateSlider() { const cardWidth = cards[0].offsetWidth + 24; track.style.transform = `translateX(-${currentIndex * cardWidth}px)`; progress.style.transition = "none"; progress.style.width = "0%"; setTimeout(() => { progress.style.transition = "6s linear"; progress.style.width = "100%"; }, 50); if (currentIndex >= cards.length / 2) { currentIndex = 0; track.style.transition = "none"; track.style.transform = "translateX(0px)"; setTimeout(() => { track.style.transition = "1s ease"; }, 50); } } nextBtn.addEventListener("click", () => { currentIndex++; updateSlider(); }); prevBtn.addEventListener("click", () => { currentIndex--; if (currentIndex < 0) { currentIndex = cards.length / 2 - 1; } updateSlider(); }); setInterval(() => { nextBtn.click(); }, 6000); updateSlider(); </script>
+
+</html>
