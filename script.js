@@ -1,3 +1,4 @@
+// Testimonials Section
 const container = document.querySelector(".testimonials-container");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
@@ -102,3 +103,35 @@ prevBtn.addEventListener("click", prevSlide);
 setInterval(nextSlide, 3500);
 
 move();
+
+// FAQ Section
+
+const faqs = document.querySelectorAll(".faq-box");
+
+faqs.forEach(faq => {
+
+    faq.querySelector(".faq-question").addEventListener("click", () => {
+
+        faqs.forEach(item => {
+
+            if(item !== faq){
+                item.classList.remove("active");
+                item.querySelector(".faq-icon").innerHTML = "+";
+            }
+
+        });
+
+        faq.classList.toggle("active");
+
+        const icon = faq.querySelector(".faq-icon");
+
+        if(faq.classList.contains("active")){
+            icon.innerHTML = "−";
+        }
+        else{
+            icon.innerHTML = "+";
+        }
+
+    });
+
+});

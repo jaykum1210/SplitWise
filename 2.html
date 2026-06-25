@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+.footer{
+    width: 100%;
+    margin-top: 120px;
+
+    padding: 80px 0 30px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-top{
+    width: min(90%, 1400px);
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+    padding-bottom: 60px;
+}
+
+.footer-brand{
+    max-width: 380px;
+}
+
+.footer-brand h2{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.footer-brand p{
+    color: #8d8d8d;
+    line-height: 1.9;
+    font-size: .95rem;
+}
+
+.footer-links{
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+}
+
+.footer-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h4{
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.footer-column a{
+    color: #8d8d8d;
+    text-decoration: none;
+
+    margin-bottom: 14px;
+
+    transition: .3s;
+}
+
+.footer-column a:hover{
+    color: rgb(24,194,125);
+}
+
+.footer-bottom{
+    width: min(90%, 1400px);
+    margin: auto;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p{
+    color: #7a7a7a;
+    font-size: .9rem;
+}
+
+@media(max-width:1000px){
+
+    .footer-top{
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .footer-links{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer-links{
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+    </style>
+</head>
+<body>
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <h2>SplitWise</h2>
+
+            <p>
+                Simplifying shared expenses for friends, roommates,
+                families, and groups. Track expenses, split bills fairly,
+                and settle balances with ease.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <div class="footer-column">
+
+                <h4>Quick Links</h4>
+
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <a href="#">Help Center</a>
+                <a href="#">FAQs</a>
+                <a href="#">Support</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Legal</h4>
+
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>© 2026 SplitWise. All rights reserved.</p>
+
+        <p>Made with transparency and trust.</p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
