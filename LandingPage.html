@@ -8,7 +8,7 @@
     <!-- SplitWise Website Name -->
     <title>SlitWise</title>
     <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="LandingPage.css">
 
     <!-- Google Font Stack Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,7 @@
 </head>
 
 <body>
+    <div id="scroll-progress"></div>
     <!-- Header -->
     <header>
         <!-- Nav -->
@@ -68,7 +69,28 @@
                 <!-- Nav Sign Up Button -->
                 <button class="nav-signup">Sign Up</button>
             </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <div id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="#why-section">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-buttons">
+                <button class="nav-login">Login</button>
+                <button class="nav-signup">Sign Up</button>
+            </div>
+        </div>
     </header>
     <main>
         <!-- Hero Section -->
@@ -1118,8 +1140,18 @@
             <p>Designed for seamless and transparent expense management.</p>
         </div>
     </footer>
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <svg class="back-top-ring" viewBox="0 0 44 44">
+            <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+            <circle class="ring-progress" id="ringProgress" cx="22" cy="22" r="18">
+            </circle>
+        </svg>
+        <svg class="back-top-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 </body>
 <!-- Js File -->
-<script src="script.js"></script>
-
+<script src="LandingPage.js"></script>
 </html>
