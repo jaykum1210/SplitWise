@@ -215,8 +215,6 @@ const revealObserver = new IntersectionObserver(
     }
 );
 
-document
-    .querySelectorAll(".reveal-item")
-    .forEach((el) => {
-        revealObserver.observe(el);
-    });
+document.querySelectorAll(".reveal-item").forEach((el) => {
+    revealObserver.observe(el);
+});
