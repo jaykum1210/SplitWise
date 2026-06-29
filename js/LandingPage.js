@@ -218,3 +218,24 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal-item").forEach((el) => {
     revealObserver.observe(el);
 });
+
+
+// Card Reveal
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            // Uncomment the next line if you want the animation only once
+            // observer.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove("active");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+reveals.forEach(reveal => observer.observe(reveal));

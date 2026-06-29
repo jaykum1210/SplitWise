@@ -5,10 +5,11 @@
     <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SplitWise Website Name -->
+    <!-- BalanceSplitter Website Name -->
     <title>SlitWise</title>
     <!-- CSS File -->
     <link rel="stylesheet" href="/css/LandingPage.css">
+    <link rel="stylesheet" href="/css/common.css">
 
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -32,7 +33,7 @@
             <!-- Nav Logo Box -->
             <div id="nav-left">
                 <!-- Nav Logo -->
-                <span class="nav-logo">SplitWise</span>
+                <span class="nav-logo">BalanceSplitter</span>
             </div>
             <!-- Nav Link Box -->
             <div id="nav-link-box">
@@ -49,17 +50,17 @@
             <!-- Nav Right Login and Sign Up Box -->
             <div id="nav-right">
                 <!-- Nav Login Button -->
-                <button class="nav-login">Login</button>
+                <a href="LoginPage.html" class="nav-login">Login</a>
                 <!-- Nav Sign Up Button -->
-                <button class="nav-signup">Sign Up</button>
+                <a class="nav-signup">Sign Up</a>
             </div>
 
             <!-- Hamburger -->
-            <button id="hamburger" aria-label="Open Menu">
+            <a id="hamburger" aria-label="Open Menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </a>
         </nav>
 
         <div id="mobile-menu">
@@ -71,14 +72,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-buttons">
-                <button class="nav-login">Login</button>
-                <button class="nav-signup">Sign Up</button>
+                <a href="LoginPage.html" class="nav-login">Login</a>
+                <a href="" class="nav-signup">Sign Up</a>
             </div>
         </div>
     </header>
     <main>
         <!-- Hero Section -->
-        <div id="hero-section">
+        <div id="hero-section" class="reveal">
             <!-- Hero Section Inner Box -->
             <div id="hero-section-box">
                 <!-- Hero Section Left Box -->
@@ -106,12 +107,14 @@
                     </div>
                     <!-- Hero Section Button Box -->
                     <div class="hero-section-buttons">
-                        <!-- Hero Section Get Started Button -->
-                        <div class="hero-section-button get-started"><button>Get Started <i
-                                    class="fa-solid fa-faq-arrow-right"></i></button></div>
-                        <!-- Hero Section Learn More Button -->
-                        <div class="hero-section-button learn-more"><button>Learn More <i
-                                    class="fa-solid fa-caret-right"></i></button></div>
+                        <a href="LoginPage.html" class="hero-section-button get-started">
+                            Get Started
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#why-section" class="hero-section-button learn-more">
+                            Learn More
+                            <i class="fa-solid fa-caret-right"></i>
+                        </a>
                     </div>
                     <!-- Hero Section Rating Box -->
                     <div class="hero-section-rating">
@@ -127,7 +130,7 @@
                             </div>
                             <!-- Hero Section Rating -->
                             <div id="hero-rating">
-                                10,000+ users trust SplitWise
+                                10,000+ users trust BalanceSplitter
                             </div>
                         </div>
                     </div>
@@ -187,7 +190,7 @@
             </div>
         </div>
         <!-- User Detail Bar -->
-        <div id="users-detail-bar">
+        <div id="users-detail-bar" class="reveal">
             <!-- User Detail Box -->
             <div id="user-detail-box">
                 <div class="user-detail-boxes">
@@ -212,7 +215,7 @@
             </div>
         </div>
         <!-- Why Section -->
-        <div id="why-section">
+        <div id="why-section" class="reveal">
             <!-- Why Section Upper Green Shadow -->
             <div class="hero-right-shadow why-green-shadow-upper"></div>
             <!-- Why Section Lower Green Shadow -->
@@ -241,7 +244,8 @@
                             </div>
                             <!-- Why Section Main Box Description -->
                             <div class="why-section-line2">
-                                SplitWise Makes it Effortless to Track, Split, and Settle Shared Expenses so you can
+                                BalanceSplitter Makes it Effortless to Track, Split, and Settle Shared Expenses so you
+                                can
                                 Focus on What Matters-Together.
                             </div>
                         </div>
@@ -317,7 +321,7 @@
             </div>
         </div>
         <!-- How It Works Box -->
-        <div class="how-it-works" id="how-it-works">
+        <div class="how-it-works reveal" id="how-it-works" aria-colcount="reveal">
             <!-- Why Section Upper Box -->
             <div class="why-section-box">
                 <!-- Why Section Detail Box -->
@@ -336,7 +340,8 @@
                     </div>
                     <!-- Why Section Heading Box Description -->
                     <div class="why-section-line2">
-                        From creating a group to clearing balances, SplitWise keeps every shared expense organized,
+                        From creating a group to clearing balances, BalanceSplitter keeps every shared expense
+                        organized,
                         transparent, and hassle-free.
                     </div>
                 </div>
@@ -473,7 +478,7 @@
             </div>
         </div>
         <!-- Testimonials -->
-        <div class="Testimonials" id="testimonials">
+        <div class="Testimonials reveal" id="testimonials" aria-colcount="reveal">
             <!-- Testimonials Inner Box -->
             <div class="why-section-box">
                 <!-- Testimonials Detail Box -->
@@ -529,7 +534,8 @@
                         </div>
                         <!-- Testimonials Box Text -->
                         <div class="testimonials-box-line">
-                            <span>Keeping track of rent and utility bills with roommates used to be stressful. SplitWise
+                            <span>Keeping track of rent and utility bills with roommates used to be stressful.
+                                BalanceSplitter
                                 made it incredibly simple.</span>
                             <!-- Testimonials Box White Text -->
                             <span class="testimonials-box-line-lower">No more awkward reminders!</span>
@@ -627,7 +633,7 @@
                         <div class="testimonials-box-line">
                             <span>Office lunches and team outings are no longer a mess to manage.</span>
                             <!-- Testimonials Box White Text -->
-                            <span class="testimonials-box-line-lower">SplitWise saves us so much time!</span>
+                            <span class="testimonials-box-line-lower">BalanceSplitter saves us so much time!</span>
                         </div>
                         <!-- Testimonials Box People -->
                         <div class="testimonials-box-people">
@@ -687,7 +693,8 @@
                         </div>
                         <!-- Testimonials Box Text -->
                         <div class="testimonials-box-line">
-                            <span>Living with roommates became much easier after we started using SplitWise.</span>
+                            <span>Living with roommates became much easier after we started using
+                                BalanceSplitter.</span>
                             <!-- Testimonials Box White Text -->
                             <span class="testimonials-box-line-lower">No more money drama!</span>
                         </div>
@@ -750,7 +757,7 @@
             </div>
         </div>
         <!-- FAQ Box -->
-        <div class="faq-container" id="faq">
+        <div class="faq-container reveal" id="faq">
             <!-- FAQ Detail Box -->
             <div class="faq-section">
                 <!-- FAQ Detail Inner bar -->
@@ -766,17 +773,17 @@
                 <!-- FAQ Question Box 1 -->
                 <div class="faq-box">
                     <!-- FAQ Question -->
-                    <button class="faq-question">
+                    <a href="" class="faq-question">
                         <!-- FAQ Question Left Box -->
                         <div class="faq-left">
                             <!-- FAQ Question Icon -->
                             <div class="faq-icon">+</div>
                             <!-- FAQ Question -->
-                            <div class="faq-title">Is SplitWise free to use?</div>
+                            <div class="faq-title">Is BalanceSplitter free to use?</div>
                         </div>
                         <!-- FAQ Arrow -->
                         <div class="faq-arrow"><img src="/images/lower-arrow.png" alt="Lower Arrow"></div>
-                    </button>
+                    </a>
                     <!-- FAQ Answer -->
                     <div class="faq-answer">
                         Yes! You can create groups, add expenses, track balances, and settle up with friends—all for
@@ -819,7 +826,8 @@
                     </button>
                     <!-- FAQ Answer -->
                     <div class="faq-answer">
-                        Absolutely. SplitWise automatically calculates balances and shows who owes whom in real time.
+                        Absolutely. BalanceSplitter automatically calculates balances and shows who owes whom in real
+                        time.
                     </div>
                 </div>
                 <!-- FAQ Question Box 4 -->
@@ -897,7 +905,7 @@
                     </button>
                     <!-- FAQ Answer -->
                     <div class="faq-answer">
-                        Yes. SplitWise keeps a complete history of expenses and settlements for easy reference.
+                        Yes. BalanceSplitter keeps a complete history of expenses and settlements for easy reference.
                     </div>
                 </div>
                 <!-- FAQ Question Box 8 -->
@@ -923,7 +931,7 @@
             </div>
         </div>
         <!-- Contact Box -->
-        <section id="contact">
+        <section id="contact" class="reveal">
             <!-- Contact Inner Box -->
             <div class="section-container">
                 <!-- Contact Inner Box Head -->
@@ -945,8 +953,8 @@
                             We'd love to hear from you.
                         </p>
                         <!-- Contact Left Box Email -->
-                        <a href="mailto:support@splitwise.com" class="email-direct reveal-item delay-1">
-                            <span>support@splitwise.com</span>
+                        <a href="mailto:support@BalanceSplitter.com" class="email-direct reveal-item delay-1">
+                            <span>support@BalanceSplitter.com</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
@@ -1021,7 +1029,7 @@
             </div>
         </section>
         <!-- Get Started Box -->
-        <div class="cta-section">
+        <div class="cta-section reveal">
             <!-- Get Started Inner Box -->
             <div class="cta-card">
                 <!-- Get Started Start Box -->
@@ -1036,7 +1044,7 @@
                 <!-- Get Started Sub Heading -->
                 <p class="cta-subheading">
                     Join thousands of friends, families, roommates, and teams who trust
-                    SplitWise to manage shared expenses effortlessly.
+                    BalanceSplitter to manage shared expenses effortlessly.
                 </p>
                 <!-- Get Started Buttons -->
                 <div class="cta-buttons">
@@ -1046,9 +1054,9 @@
                         <span>→</span>
                     </a>
                     <!-- Get Started Already Have Account Button -->
-                    <a href="#" class="cta-secondary-btn">
+                    <a href="LoginPage.html" class="cta-secondary-btn">
                         Already have an account?
-                        <span>Sign In</span>
+                        <span>Login</span>
                     </a>
                 </div>
                 <!-- Get Started Lower Paragraph -->
@@ -1083,7 +1091,7 @@
         <div class="footer-top">
             <!-- Brand -->
             <div class="footer-brand">
-                <h2>SplitWise</h2>
+                <h2>BalanceSplitter</h2>
                 <p>
                     Simplifying shared expenses for friends, roommates, families,
                     and teams. Track expenses, split bills fairly, and settle
@@ -1095,8 +1103,8 @@
                 <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
-                    <a href="#home">Home</a>
-                    <a href="#features">Features</a>
+                    <a href="#">Home</a>
+                    <a href="#why-section">Features</a>
                     <a href="#how-it-works">How It Works</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
@@ -1120,7 +1128,7 @@
         </div>
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p>© 2026 SplitWise. All rights reserved.</p>
+            <p>© 2026 BalanceSplitter. All rights reserved.</p>
             <p>Designed for seamless and transparent expense management.</p>
         </div>
     </footer>
@@ -1138,4 +1146,5 @@
 </body>
 <!-- Js File -->
 <script src="/js/LandingPage.js"></script>
+
 </html>
