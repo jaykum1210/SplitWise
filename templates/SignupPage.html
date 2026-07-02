@@ -25,7 +25,9 @@
 </head>
 
 <body>
+    <!-- Scroll Progress -->
     <div id="scroll-progress"></div>
+    <!-- Header -->
     <header>
         <!-- Nav -->
         <nav>
@@ -38,18 +40,22 @@
             </div>
             <!-- Nav Right -->
             <div id="nav-right-home">
-                <a href="templates/LandingPage.html" class="Home-button">
+                <a href="LandingPage.html" class="Home-button">
                     Home
                 </a>
             </div>
         </nav>
     </header>
     <main>
+        <!-- Signup Section -->
         <section class="signup-section">
+            <!-- Signup Container -->
             <div class="signup-container">
+                <!-- Signup Left Container -->
                 <div class="signup-left">
                     <!-- Brand -->
                     <div class="left-brand">
+                        <!-- Signup Left Text -->
                         <div class="brand-text">
                             <h2>
                                 <span class="hero-section-main-line2">
@@ -76,6 +82,7 @@
                         </p>
                     </div>
                 </div>
+                <!-- Signup Right -->
                 <div class="signup-right">
                     <!-- Support -->
                     <div class="support-box">
@@ -218,6 +225,7 @@
             </div>
         </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <!-- Footer Top -->
         <div class="footer-top">
@@ -301,6 +309,17 @@
             </p>
         </div>
     </footer>
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <svg class="back-top-ring" viewBox="0 0 44 44">
+            <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+            <circle class="ring-progress" id="ringProgress" cx="22" cy="22" r="18">
+            </circle>
+        </svg>
+        <svg class="back-top-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <!-- ==========================================
                 JAVASCRIPT

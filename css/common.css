@@ -23,9 +23,8 @@
     --color-bg-primary: #05090f;
     --color-panel: #0d111a;
     --footer-bg: #0b1018;
-    /* ==========================
-       COLORS
-    ========================== */
+    
+       /* COLORS */
 
     --color-black: #000000;
     --color-white: #ffffff;
@@ -53,9 +52,7 @@
     --color-blue-light: #64b7fb;
     --color-blue-dark: #1d4ed8;
 
-    /* ==========================
-       TEXT
-    ========================== */
+       /* TEXT */
 
     --text-primary: #ffffff;
     --text-secondary: #d5d5d5;
@@ -65,38 +62,28 @@
     --text: #d1d5db;
     --muted: #8b949e;
 
-    /* ==========================
-       NAVIGATION
-    ========================== */
+       /* NAVIGATION */
 
     --nav-bg: rgba(10, 10, 10, .70);
 
-    /* ==========================
-       GLASS
-    ========================== */
+       /* GLASS */
 
     --glass-bg: rgba(255, 255, 255, .03);
     --glass-border: rgba(255, 255, 255, .08);
 
-    /* ==========================
-       BORDER
-    ========================== */
+       /* BORDER */
 
     --border-rgb: rgb(68 71 72);
     --border-color: rgba(255, 255, 255, .10);
     --border-light: rgba(255, 255, 255, .08);
 
-    /* ==========================
-       SHADOW
-    ========================== */
+       /* SHADOW */
 
     --shadow-sm: 0 5px 20px rgba(0, 0, 0, .15);
     --shadow-md: 0 10px 35px rgba(0, 0, 0, .25);
     --shadow-lg: 0 25px 70px rgba(0, 0, 0, .35);
 
-    /* ==========================
-       RADIUS
-    ========================== */
+       /* RADIUS */
 
     --radius-sm: 8px;
     --radius-md: 16px;
@@ -107,29 +94,18 @@
 
     --radius: 26px;
 
-    /* ==========================
-       GRADIENTS
-    ========================== */
+       /* GRADIENTS */
 
     --gradient-primary: linear-gradient(90deg,
             var(--color-primary-light) 0%,
             var(--color-cyan-light) 50%,
             #1abac3 100%);
 
-    /* ==========================
-       TRANSITIONS
-    ========================== */
+       /* TRANSITIONS */
 
     --transition-fast: .25s ease;
     --transition: .4s ease;
     --transition-slow: .7s ease;
-
-    /* ==========================
-       FONT
-    ========================== */
-
-    /* --font-primary: "Inter", sans-serif; */
-
 }
 
 /* ── Body ── */
