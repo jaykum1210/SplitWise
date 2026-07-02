@@ -1,7 +1,4 @@
-// ======================================================
 // TESTIMONIALS SECTION
-// ======================================================
-
 const container = document.querySelector(".testimonials-container");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
@@ -81,10 +78,7 @@ if (container && nextBtn && prevBtn) {
     move();
 }
 
-// ======================================================
 // FAQ SECTION
-// ======================================================
-
 const faqs = document.querySelectorAll(".faq-box");
 
 faqs.forEach((faq) => {
@@ -114,10 +108,7 @@ faqs.forEach((faq) => {
     });
 });
 
-// ======================================================
 // MOBILE MENU
-// ======================================================
-
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 
@@ -128,114 +119,3 @@ if (hamburger && mobileMenu) {
     });
 }
 
-// ======================================================
-// BACK TO TOP + SCROLL PROGRESS
-// ======================================================
-
-const progressBar = document.getElementById("scroll-progress");
-const backTop = document.getElementById("backTop");
-const ringProgress = document.getElementById("ringProgress");
-
-const radius = 18;
-const circumference = 2 * Math.PI * radius;
-
-if (ringProgress) {
-    ringProgress.style.strokeDasharray = circumference;
-    ringProgress.style.strokeDashoffset = circumference;
-}
-
-function updateBackTop() {
-    const scrollTop = window.scrollY;
-    const docHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-    const progress = docHeight
-        ? scrollTop / docHeight
-        : 0;
-    // Update Top Progress Bar
-    if (progressBar) {
-        progressBar.style.width = `${progress * 100}%`;
-    }
-    // Update Circular Progress
-    if (ringProgress) {
-        ringProgress.style.strokeDashoffset =
-            circumference * (1 - progress);
-    }
-    // Show / Hide Back To Top Button
-    if (backTop) {
-        backTop.classList.toggle(
-            "visible",
-            scrollTop > 350
-        );
-    }
-}
-
-// Scroll Event
-window.addEventListener(
-    "scroll",
-    updateBackTop,
-    { passive: true }
-);
-
-// Initial Call
-updateBackTop();
-
-// Back To Top Click
-if (backTop) {
-    backTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    });
-}
-
-// ======================================================
-// SCROLL REVEAL
-// ======================================================
-
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add(
-                    "revealed"
-                );
-                // Animate only once
-                revealObserver.unobserve(
-                    entry.target
-                );
-            }
-        });
-    },
-    {
-        threshold: 0.12,
-        rootMargin:
-            "0px 0px -40px 0px",
-    }
-);
-
-document.querySelectorAll(".reveal-item").forEach((el) => {
-    revealObserver.observe(el);
-});
-
-
-// Card Reveal
-
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            // Uncomment the next line if you want the animation only once
-            // observer.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove("active");
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-reveals.forEach(reveal => observer.observe(reveal));

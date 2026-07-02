@@ -1,90 +1,94 @@
-// ======================================================
-// BACK TO TOP + SCROLL PROGRESS
-// ======================================================
+// ELEMENTS
+const passwordInput = document.getElementById("password");
+const emailInput = document.getElementById("email");
+const loginForm = document.querySelector("form");
+const loginBtn = document.querySelector(".login-btn");
+const eyeIcon = document.querySelector(".fa-eye, .fa-eye-slash");
 
-const progressBar = document.getElementById("scroll-progress");
-const backTop = document.getElementById("backTop");
-const ringProgress = document.getElementById("ringProgress");
+// PASSWORD SHOW / HIDE
+if (passwordInput && eyeIcon) {
+    eyeIcon.addEventListener("click", () => {
+        const isHidden = passwordInput.type === "password";
 
-const radius = 18;
-const circumference = 2 * Math.PI * radius;
+        passwordInput.type = isHidden ? "text" : "password";
 
-if (ringProgress) {
-    ringProgress.style.strokeDasharray = circumference;
-    ringProgress.style.strokeDashoffset = circumference;
-}
-
-function updateBackTop() {
-    const scrollTop = window.scrollY;
-    const docHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-    const progress = docHeight
-        ? scrollTop / docHeight
-        : 0;
-    // Update Top Progress Bar
-    if (progressBar) {
-        progressBar.style.width = `${progress * 100}%`;
-    }
-    // Update Circular Progress
-    if (ringProgress) {
-        ringProgress.style.strokeDashoffset =
-            circumference * (1 - progress);
-    }
-    // Show / Hide Back To Top Button
-    if (backTop) {
-        backTop.classList.toggle(
-            "visible",
-            scrollTop > 350
-        );
-    }
-}
-
-// Scroll Event
-window.addEventListener(
-    "scroll",
-    updateBackTop,
-    { passive: true }
-);
-
-// Initial Call
-updateBackTop();
-
-// Back To Top Click
-if (backTop) {
-    backTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        eyeIcon.classList.toggle("fa-eye");
+        eyeIcon.classList.toggle("fa-eye-slash");
     });
 }
 
-// ======================================================
-// SCROLL REVEAL
-// ======================================================
+// LOGIN FORM VALIDATION
+if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add(
-                    "revealed"
-                );
-                // Animate only once
-                revealObserver.unobserve(
-                    entry.target
-                );
-            }
-        });
-    },
-    {
-        threshold: 0.12,
-        rootMargin:
-            "0px 0px -40px 0px",
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // Empty Fields
+        if (!email || !password) {
+            alert("Please enter your email and password.");
+            return;
+        }
+
+        // Email Validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        // Password Validation
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters.");
+            return;
+        }
+
+        // Loading Effect
+        if (loginBtn) {
+            loginBtn.disabled = true;
+            loginBtn.classList.add("loading");
+
+            setTimeout(() => {
+                loginBtn.disabled = false;
+                loginBtn.classList.remove("loading");
+            }, 1000);
+        }
+
+        console.log("Email:", email);
+        console.log("Password:", password);
+
+        // TODO:
+        // Send login request here
+    });
+}
+
+// ENTER KEY SUBMIT
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && loginForm) {
+        loginForm.requestSubmit();
     }
-);
+});
 
-document.querySelectorAll(".reveal-item").forEach((el) => {
-    revealObserver.observe(el);
+// PASSWORD TRIM SPACES
+if (passwordInput) {
+    passwordInput.addEventListener("input", () => {
+        passwordInput.value = passwordInput.value.trimStart();
+    });
+}
+
+// INPUT FOCUS EFFECT
+document.querySelectorAll(".input-box input").forEach((input) => {
+
+    input.addEventListener("focus", () => {
+        input.parentElement.classList.add("active");
+    });
+
+    input.addEventListener("blur", () => {
+        if (input.value.trim() === "") {
+            input.parentElement.classList.remove("active");
+        }
+    });
+
 });

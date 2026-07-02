@@ -63,7 +63,7 @@
     --text-muted: #bfbfbf;
     --text-grey: #8f8f8f;
     --text: #d1d5db;
-    --muted:#8b949e;
+    --muted: #8b949e;
 
     /* ==========================
        NAVIGATION
@@ -111,12 +111,10 @@
        GRADIENTS
     ========================== */
 
-    --gradient-primary: linear-gradient(
-        90deg,
-        var(--color-primary-light) 0%,
-        var(--color-cyan-light) 50%,
-        #1abac3 100%
-    );
+    --gradient-primary: linear-gradient(90deg,
+            var(--color-primary-light) 0%,
+            var(--color-cyan-light) 50%,
+            #1abac3 100%);
 
     /* ==========================
        TRANSITIONS
@@ -139,11 +137,11 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: 'Inter', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -278,7 +276,7 @@ nav {
 #hamburger span {
     width: 26px;
     height: 3px;
-    background: var(--white-color);
+    background: var(--color-white);
     border-radius: 10px;
     transition: .35s;
 }
@@ -293,6 +291,34 @@ nav {
 
 #hamburger.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Home Button */
+.Home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    background: var(--green-color);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+/* Home Button Hover */
+.Home-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(24, 194, 125, .3);
+}
+
+/* Home Button Active */
+.Home-button:active {
+    transform: scale(.98);
 }
 
 /* Mobile menu */
@@ -346,6 +372,32 @@ nav {
     font-size: 15px;
     text-align: center;
 }
+
+/* ============================================================
+   ANIMATED GRADIENT TEXT
+   ============================================================ */
+.hero-section-main-line2 {
+    background: linear-gradient(90deg,
+            #0b7a43 0%, #0b7a43 25%,
+            #0b6f8c 50%, #1d4ed8 75%,
+            #0b7a43 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 4s linear infinite;
+}
+
+@keyframes gradient-flow {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
 
 /* Footer */
 
@@ -429,7 +481,7 @@ nav {
 
 
 /* ── Back to Top (enhanced) ── */
-.back-top{
+.back-top {
     position: fixed;
     bottom: 32px;
     right: 32px;
@@ -442,10 +494,10 @@ nav {
     border: none;
     outline: none;
     border-radius: 50%;
-    background: rgba(255,255,255,.92);
+    background: rgba(255, 255, 255, .92);
     backdrop-filter: blur(10px);
     box-shadow:
-        0 10px 30px rgba(0,0,0,.18);
+        0 10px 30px rgba(0, 0, 0, .18);
     z-index: 500;
     opacity: 0;
     transform: translateY(16px);
@@ -462,71 +514,233 @@ nav {
 }
 
 /* Hover effect: smooth lift + glow */
-.back-top:hover{
-    transform:scale(1.08);
+.back-top:hover {
+    transform: scale(1.08);
     box-shadow:
-        0 15px 35px rgba(24,194,125,.25),
-        0 8px 20px rgba(0,0,0,.18);
+        0 15px 35px rgba(24, 194, 125, .25),
+        0 8px 20px rgba(0, 0, 0, .18);
 }
+
 .back-top:active {
     transform: scale(0.98);
 }
+
 /* When overlapping footer - ensure visibility */
 .back-top.overlap-footer {
     background: var(--white);
     border: 1px solid rgba(10, 10, 10, 0.14);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 .back-top.overlap-footer .ring-track {
     stroke: rgba(10, 10, 10, 0.2);
 }
+
 .back-top.overlap-footer .back-top-arrow {
     color: var(--color-bg-deep);
 }
 
-.back-top-ring{
-    position:absolute;
-    width:60px;
-    height:60px;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) rotate(-90deg);
-    overflow:visible;
-    pointer-events:none;
+.back-top-ring {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    overflow: visible;
+    pointer-events: none;
 }
 
-.ring-track{
-    fill:none;
-    stroke:rgba(255,255,255,.15);
-    stroke-width:2.5;
+.ring-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, .15);
+    stroke-width: 2.5;
 }
 
 /* Ring color matches theme */
-.ring-progress{
-    fill:none;
+.ring-progress {
+    fill: none;
     stroke: var(--button-green-background);
-    stroke-width:2.5;
-    stroke-linecap:round;
-    stroke-dasharray:113.097;
-    stroke-dashoffset:113.097;
-    transition:stroke-dashoffset .15s linear;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 113.097;
+    stroke-dashoffset: 113.097;
+    transition: stroke-dashoffset .15s linear;
 }
-.back-top-arrow{
-    width:18px;
-    height:18px;
-    color:var(--black);
-    position:relative;
-    z-index:2;
+
+.back-top-arrow {
+    width: 18px;
+    height: 18px;
+    color: var(--black);
+    position: relative;
+    z-index: 2;
 }
 
 /* Card Reveal */
-.reveal{
+.reveal {
     opacity: 0;
     transform: translateY(60px);
     transition: opacity .8s ease, transform .8s ease;
 }
 
-.reveal.active{
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 14px 22px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Nav */
+    #nav-link-box,
+    #nav-right {
+        display: none;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    /* ── FOOTER — fully horizontal on mobile ── */
+    .footer-top {
+        flex-direction: row;
+        /* horizontal row */
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .footer-brand {
+        flex: 1 1 180px;
+        max-width: 240px;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+        font-size: .78rem;
+        line-height: 1.7;
+    }
+
+    .footer-links {
+        flex: 1 1 auto;
+        grid-template-columns: repeat(3, 1fr);
+        /* keep 3 link columns */
+        gap: 14px 20px;
+    }
+
+    .footer-column h4 {
+        font-size: .82rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-column a {
+        font-size: .75rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        /* horizontal bottom bar */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 6px;
+        text-align: left;
+    }
+
+    .footer-bottom p {
+        font-size: .72rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    /* Footer — keep horizontal, tighten */
+    .footer-brand {
+        flex: 1 1 140px;
+        max-width: 200px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 16px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    /* Footer — stack on tiny screens */
+    .footer-top {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1920px) {
+    :root {
+        font-size: 17px;
+    }
+
+    #hero-section-box,
+    nav,
+    #why-section-inner,
+    .how-it-works-lower,
+    .Testimonials,
+    .faq-container-box,
+    .section-container,
+    .footer-top,
+    .footer-bottom {
+        max-width: 1700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
