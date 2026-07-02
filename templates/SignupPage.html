@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BalanceSplitter Website Name -->
+    <title>BalanceSplitter</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/css/SignupPage.css">
+    <link rel="stylesheet" href="/css/common.css">
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alien+Block&family=Stack+Sans+Headline:wght@200..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+    <header>
+        <!-- Nav -->
+        <nav>
+            <!-- Nav Logo Box -->
+            <div id="nav-left">
+                <!-- Nav Logo -->
+                <span class="nav-logo">
+                    BalanceSplitter
+                </span>
+            </div>
+            <!-- Nav Right -->
+            <div id="nav-right-home">
+                <a href="templates/LandingPage.html" class="Home-button">
+                    Home
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="signup-section">
+            <div class="signup-container">
+                <div class="signup-left">
+                    <!-- Brand -->
+                    <div class="left-brand">
+                        <div class="brand-text">
+                            <h2>
+                                <span class="hero-section-main-line2">
+                                    BalanceSplitter
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- Hero -->
+                    <div class="hero-content">
+                        <h1>
+                            Join
+                            BalanceSplitter
+                            <br>
+                            and start splitting
+                            <span>
+                                smarter.
+                            </span>
+                        </h1>
+                        <p>
+                            Create your account and experience
+                            effortless expense sharing with
+                            friends, family, roommates and teams.
+                        </p>
+                    </div>
+                </div>
+                <div class="signup-right">
+                    <!-- Support -->
+                    <div class="support-box">
+                        <span>
+                            Need help?
+                        </span>
+                        <a href="#">
+                            Contact Support
+                        </a>
+                    </div>
+                    <!-- Heading -->
+                    <div class="signup-heading">
+                        <h2>
+                            Create your
+                            <span>
+                                account
+                            </span>
+                        </h2>
+                        <p>
+                            It only takes a minute.
+                        </p>
+                    </div>
+                    <form class="signup-form" action="#" method="post">
+                        <!-- Full Name -->
+                        <div class="input-group">
+                            <label for="fullName">
+                                Full Name
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                                <i class="fa-solid fa-circle-check valid-icon"></i>
+                            </div>
+                        </div>
+                        <!-- Username -->
+                        <div class="input-group">
+                            <label for="username">
+                                Username
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-at"></i>
+                                <input type="text" id="username" placeholder="Choose a username" required>
+                                <i class="fa-solid fa-circle-check valid-icon"></i>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="input-group">
+                            <label for="email">
+                                Email Address
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="email" placeholder="Enter your email address" required>
+                                <i class="fa-solid fa-circle-check valid-icon"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">
+                                Password
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="password" placeholder="Create a password" required>
+                                <i class="fa-regular fa-eye toggle-password"></i>
+                                <i class="fa-solid fa-circle-check valid-icon"></i>
+                            </div>
+                            <!-- Password Strength -->
+                            <div class="password-strength">
+                                <div class="strength-bars">
+                                    <span class="active"></span>
+                                    <span class="active"></span>
+                                    <span class="active"></span>
+                                    <span></span>
+                                </div>
+                                <span class="strength-text">
+                                    Strong
+                                </span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+                            <div class="input-box">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="confirmPassword" placeholder="Confirm your password"
+                                    required>
+                                <i class="fa-regular fa-eye toggle-confirm-password"></i>
+                                <i class="fa-solid fa-circle-check valid-icon"></i>
+                            </div>
+                        </div>
+                        <!-- Password Match -->
+                        <div class="password-match">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>
+                                Passwords match
+                            </span>
+                        </div>
+                        <label class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <span>
+                                I agree to the
+                                <a href="#">
+                                    Terms of Service
+                                </a>
+                                and
+                                <a href="#">
+                                    Privacy Policy
+                                </a>
+                            </span>
+                        </label>
+                        <button type="submit" class="signup-btn">
+                            <span>
+                                Create Account
+                            </span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <!-- Divider -->
+                        <div class="divider">
+                            <span></span>
+                            <p>
+                                or
+                            </p>
+                            <span></span>
+                        </div>
+                        <button type="button" class="google-btn">
+                            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                            <span>
+                                Continue with Google
+                            </span>
+                        </button>
+                        <p class="login-text">
+                            Already have an account?
+                            <a href="LoginPage.html">
+                                Sign in
+                            </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <!-- Footer Top -->
+        <div class="footer-top">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <h2>
+                    BalanceSplitter
+                </h2>
+                <p>
+                    Simplifying shared expenses for friends, roommates,
+                    families, and teams. Track expenses, split bills
+                    fairly, and settle balances effortlessly.
+                </p>
+            </div>
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>
+                        Quick Links
+                    </h4>
+                    <a href="#">
+                        Home
+                    </a>
+                    <a href="#why-section">
+                        Features
+                    </a>
+                    <a href="#how-it-works">
+                        How It Works
+                    </a>
+                    <a href="#faq">
+                        FAQ
+                    </a>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </div>
+                <!-- Resources -->
+                <div class="footer-column">
+                    <h4>
+                        Resources
+                    </h4>
+                    <a href="#">
+                        Help Center
+                    </a>
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms &amp; Conditions
+                    </a>
+                </div>
+                <!-- Connect -->
+                <div class="footer-column">
+                    <h4>
+                        Connect
+                    </h4>
+                    <a href="#">
+                        Instagram
+                    </a>
+                    <a href="#">
+                        LinkedIn
+                    </a>
+                    <a href="#">
+                        GitHub
+                    </a>
+                    <a href="#">
+                        Twitter (X)
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 BalanceSplitter. All rights reserved.
+            </p>
+            <p>
+                Designed for seamless and transparent
+                expense management.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+                JAVASCRIPT
+    =========================================== -->
+
+    <script src="/js/Common.js"></script>
+
+    <script src="/js/SignUpPage.js"></script>
+
+</body>
+
+</html>
