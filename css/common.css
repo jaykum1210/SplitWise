@@ -1,3 +1,4 @@
+/* All Fields */
 *,
 *::before,
 *::after {
@@ -6,6 +7,7 @@
     box-sizing: border-box;
 }
 
+/* Root */
 :root {
     --green-color: rgb(24, 194, 125);
     --button-green-background: #00ff99;
@@ -108,19 +110,22 @@
     --transition-slow: .7s ease;
 }
 
-/* ── Body ── */
+/* ── Html ── */
 html {
     scroll-behavior: smooth;
 }
 
+/* Body */
 body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Links */
 a {
     text-decoration: none;
 }
 
+/* Scroll Progress */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -146,6 +151,7 @@ header {
     z-index: 1000;
 }
 
+/* Nav */
 nav {
     display: flex;
     justify-content: space-between;
@@ -154,6 +160,7 @@ nav {
     margin: 0 auto;
 }
 
+/* Nav Left Box */
 #nav-left {
     font-size: clamp(18px, 2vw, 24px);
     font-weight: 900;
@@ -161,6 +168,7 @@ nav {
     flex-shrink: 0;
 }
 
+/* Nav List */
 #nav-list {
     list-style: none;
     display: flex;
@@ -168,6 +176,7 @@ nav {
     font-size: clamp(12px, 1.1vw, 14px);
 }
 
+/* Nav List Link */
 #nav-list a {
     display: inline-block;
     position: relative;
@@ -177,10 +186,12 @@ nav {
     white-space: nowrap;
 }
 
+/* Nav List Link Hover Effect */
 #nav-list a:hover {
     color: var(--color-white);
 }
 
+/* Nav list Link After */
 #nav-list a::after {
     content: "";
     position: absolute;
@@ -194,16 +205,19 @@ nav {
     transition: transform .4s ease;
 }
 
+/* Nav List Link Hover After Effect */
 #nav-list a:hover::after {
     transform: scaleX(1);
 }
 
+/* Nav Right Box */
 #nav-right {
     display: flex;
     gap: 16px;
     flex-shrink: 0;
 }
 
+/* Nav Login Button */
 .nav-login {
     padding: 10px 20px;
     background: transparent;
@@ -215,10 +229,12 @@ nav {
     transition: background .2s, transform .2s;
 }
 
+/* Nav Login Hover */
 .nav-login:hover {
     background: var(--color-bg);
 }
 
+/* Nav Signup Button */
 .nav-signup {
     padding: 9px 18px;
     border: none;
@@ -230,6 +246,7 @@ nav {
     transition: transform .2s;
 }
 
+/* Nav Signup Button Hover */
 .nav-signup:hover {
     transform: scale(1.05);
 }
@@ -249,6 +266,7 @@ nav {
     z-index: 1002;
 }
 
+/* Hamburger Span */
 #hamburger span {
     width: 26px;
     height: 3px;
@@ -257,14 +275,17 @@ nav {
     transition: .35s;
 }
 
+/* Hamburger Active Effect Span 1 */
 #hamburger.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
 
+/* Hamburger Active Effect Span 2 */
 #hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 
+/* Hamburger Active Effect Span 3 */
 #hamburger.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
@@ -313,27 +334,32 @@ nav {
     transition: max-height .45s ease;
 }
 
+/* Mobile Menu Active */
 #mobile-menu.active {
     max-height: 600px;
 }
 
+/* Mobile Nav List */
 .mobile-nav-list {
     width: 100%;
     list-style: none;
     padding: 20px 0;
 }
 
+/* Mobile Nav List */
 .mobile-nav-list li {
     text-align: center;
     margin: 16px 0;
 }
 
+/* Mobile Nav List Links */
 .mobile-nav-list a {
     color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
 }
 
+/* Mobile Button */
 .mobile-buttons {
     display: flex;
     flex-direction: column;
@@ -342,6 +368,7 @@ nav {
     padding: 15px 0 25px;
 }
 
+/* Mobile Button Link */
 .mobile-buttons a {
     width: 100%;
     padding: 12px;
@@ -349,9 +376,7 @@ nav {
     text-align: center;
 }
 
-/* ============================================================
-   ANIMATED GRADIENT TEXT
-   ============================================================ */
+/* ANIMATED GRADIENT TEXT */
 .hero-section-main-line2 {
     background: linear-gradient(90deg,
             #0b7a43 0%, #0b7a43 25%,
@@ -364,6 +389,7 @@ nav {
     animation: gradient-flow 4s linear infinite;
 }
 
+/* ANIMATED GRADIENT TEXT */
 @keyframes gradient-flow {
     from {
         background-position: 0% center;
@@ -376,13 +402,13 @@ nav {
 
 
 /* Footer */
-
 .footer {
     margin-top: 0;
     padding: clamp(50px, 7vw, 80px) 0 clamp(20px, 3vw, 30px);
     border-top: 1px solid rgba(255, 255, 255, .08);
 }
 
+/* Footer Top */
 .footer-top {
     width: min(90%, 1400px);
     margin: auto;
@@ -392,22 +418,26 @@ nav {
     padding-bottom: clamp(30px, 4vw, 60px);
 }
 
+/* Footer Brand */
 .footer-brand {
     max-width: 380px;
 }
 
+/* Footer Brand Heading */
 .footer-brand h2 {
     color: var(--color-white);
     font-size: clamp(1.4rem, 2vw, 2rem);
     margin-bottom: 16px;
 }
 
+/* Footer Brand Paragraph */
 .footer-brand p {
     color: var(--text-dim);
     line-height: 1.9;
     font-size: clamp(.85rem, .95vw, .95rem);
 }
 
+/* Footer Links */
 .footer-links {
     flex: 1;
     display: grid;
@@ -415,17 +445,20 @@ nav {
     gap: clamp(20px, 2.5vw, 40px);
 }
 
+/* Footer Column */
 .footer-column {
     display: flex;
     flex-direction: column;
 }
 
+/* Footer Column Heading */
 .footer-column h4 {
     color: var(--color-white);
     font-size: clamp(.85rem, 1vw, 1rem);
     margin-bottom: 16px;
 }
 
+/* Footer Column Link */
 .footer-column a {
     color: var(--text-dim);
     text-decoration: none;
@@ -434,10 +467,12 @@ nav {
     font-size: clamp(.82rem, .95vw, .9rem);
 }
 
+/* Footer Column Link Hover */
 .footer-column a:hover {
     color: var(--green-color);
 }
 
+/* Footer Bottom Box */
 .footer-bottom {
     width: min(90%, 1400px);
     margin: auto;
@@ -450,6 +485,7 @@ nav {
     gap: 10px;
 }
 
+/* Footer Bottom Paragraph */
 .footer-bottom p {
     color: var(--text-subtle);
     font-size: clamp(.78rem, .9vw, .9rem);
@@ -484,6 +520,7 @@ nav {
         background .35s ease;
 }
 
+/* Back to Top Visible */
 .back-top.visible {
     opacity: 1;
     transform: translateY(0);
@@ -497,6 +534,7 @@ nav {
         0 8px 20px rgba(0, 0, 0, .18);
 }
 
+/* Back top Active Effect */
 .back-top:active {
     transform: scale(0.98);
 }
@@ -508,6 +546,7 @@ nav {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Back Top Overlap on Footer */
 .back-top.overlap-footer .ring-track {
     stroke: rgba(10, 10, 10, 0.2);
 }
@@ -516,6 +555,7 @@ nav {
     color: var(--color-bg-deep);
 }
 
+/* Back Top Ring */
 .back-top-ring {
     position: absolute;
     width: 60px;
@@ -527,6 +567,7 @@ nav {
     pointer-events: none;
 }
 
+/* Back Top Ring */
 .ring-track {
     fill: none;
     stroke: rgba(255, 255, 255, .15);
@@ -544,6 +585,7 @@ nav {
     transition: stroke-dashoffset .15s linear;
 }
 
+/* Back Top Arrow */
 .back-top-arrow {
     width: 18px;
     height: 18px;
@@ -559,6 +601,7 @@ nav {
     transition: opacity .8s ease, transform .8s ease;
 }
 
+/* Revval Active */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
@@ -574,6 +617,7 @@ nav {
     }
 }
 
+/* Lapotop */
 @media (max-width: 1024px) {
     header {
         padding: 14px 22px;
@@ -589,6 +633,7 @@ nav {
     }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
 
     /* Nav */
@@ -656,6 +701,7 @@ nav {
     }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
     header {
         padding: 12px 16px;
@@ -679,6 +725,7 @@ nav {
     }
 }
 
+/* Small Mobile */
 @media (max-width: 380px) {
 
     /* Footer — stack on tiny screens */
@@ -701,6 +748,7 @@ nav {
     }
 }
 
+/* Large Screen */
 @media (min-width: 1920px) {
     :root {
         font-size: 17px;

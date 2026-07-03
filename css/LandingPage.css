@@ -1,14 +1,17 @@
+/* Body */
 body {
     background-color: var(--color-black);
     overflow-x: hidden;
     color: var(--color-grey);
 }
 
+/* Images */
 img {
     display: block;
     max-width: 100%;
 }
 
+/* Link */
 a{
     text-decoration: none;
 }
@@ -24,9 +27,7 @@ a{
     }
 }
 
-/* ============================================================
-   DETAIL BAR (pill tag)
-   ============================================================ */
+/* Detail Bar Box */
 .detail-bar-box {
     border: 1px solid rgb(24 194 125 / 40%);
     border-radius: 50px;
@@ -37,11 +38,13 @@ a{
     color: var(--color-primary);
 }
 
+/* Detail Bar Box Image */
 .detail-bar-box img {
     height: 18px;
     padding-right: 7px;
 }
 
+/* Detail Bar */
 .detail-bar {
     font-size: clamp(10px, 1.1vw, 13px);
     font-weight: 600;
@@ -49,13 +52,12 @@ a{
     white-space: nowrap;
 }
 
-/* ============================================================
-   HERO SECTION
-   ============================================================ */
+/* Hero Section */
 #hero-section {
     padding: clamp(60px, 8vw, 120px) clamp(20px, 4vw, 60px) 0;
 }
 
+/* Hero Section Box */
 #hero-section-box {
     display: flex;
     justify-content: space-between;
@@ -82,6 +84,7 @@ a{
     line-height: 1.1;
 }
 
+/* Hero Section Description */
 .hero-section-description {
     font-size: clamp(13px, 1.1vw, 15px);
     line-height: 1.7;
@@ -121,6 +124,7 @@ a{
     );
 }
 
+/* Get Started Hover */
 .get-started:hover{
     transform:translateY(-2px);
     box-shadow:0 10px 30px rgba(24,194,125,.35);
@@ -132,6 +136,7 @@ a{
     background:transparent;
 }
 
+/* Learn More Hover */
 .learn-more:hover{
     background:rgba(255,255,255,.04);
     border-color:rgba(255,255,255,.25);
@@ -142,6 +147,7 @@ a{
     transition:.3s;
 }
 
+/* Hero Button Icon Hover */
 .hero-section-button:hover i{
     transform:translateX(4px);
 }
@@ -153,14 +159,17 @@ a{
     gap: 12px;
 }
 
+/* Hero Section Rating Image */
 #hero-section-rating-image img {
     height: clamp(44px, 6vw, 62px);
 }
 
+/* Hero Section Rating Image */
 #hero-section-rating-stars img {
     height: 13px;
 }
 
+/* Hero Section Rating */
 #hero-rating {
     font-size: 12px;
 }
@@ -172,11 +181,13 @@ a{
     min-width: 0;
 }
 
+/* Hero Right Main Box */
 #hero-right-main-box {
     position: relative;
     z-index: 1;
 }
 
+/* Dashboard Image */
 #dashboard-main-image {
     width: 100%;
     max-width: 820px;
@@ -207,22 +218,26 @@ a{
     z-index: 10;
 }
 
+/* Hero Right Float Box Image */
 .hero-right-float-box img {
     height: 36px;
 }
 
+/* Hero Right Upper Float Box */
 #hero-right-upper {
     top: clamp(-40px, -5vw, -60px);
     right: clamp(20px, 4vw, 60px);
     animation: float 6s ease-in-out infinite;
 }
 
+/* Hero Right Lower Float Box */
 #hero-right-lower {
     bottom: clamp(-50px, -6vw, -80px);
     left: clamp(-20px, -4vw, -60px);
     animation: float 7s ease-in-out infinite;
 }
 
+/* Floating Animation */
 @keyframes float {
 
     0%,
@@ -235,6 +250,7 @@ a{
     }
 }
 
+/* Paid Box */
 .paid-box {
     color: var(--color-primary);
     font-size: 10px;
@@ -245,34 +261,40 @@ a{
     white-space: nowrap;
 }
 
+/* Hero Right Upper Inner Box */
 .hero-right-upper-box1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Hero Right Upper Box Description */
 .hero-right-upper-box2-description {
     color: var(--color-grey);
     font-size: 12px;
     margin-bottom: 8px;
 }
 
+/* Hero Right Upper Box Money */
 .hero-right-upper-box2-money {
     color: var(--color-white);
     font-size: 15px;
     font-weight: 700;
 }
 
+/* Hero Right Lower Box */
 .hero-right-lower-main-box2 {
     color: var(--color-primary);
     font-size: 18px;
     font-weight: 800;
 }
 
+/* Hero Right Upper People Image */
 #hero-right-upper-people img {
     height: 36px;
 }
 
+/* Progress Bar */
 .progress-bar {
     width: 100%;
     height: 9px;
@@ -282,6 +304,7 @@ a{
     margin-top: 6px;
 }
 
+/* Progress Bar Fill */
 .progress-fill {
     width: 80%;
     height: 100%;
@@ -306,6 +329,7 @@ a{
     pointer-events: none;
 }
 
+/* Hero Right Blue Shadow */
 .hero-right-blue-shadow {
     position: absolute;
     width: clamp(200px, 30vw, 400px);
@@ -321,9 +345,7 @@ a{
     pointer-events: none;
 }
 
-/* ============================================================
-   STATS BAR
-   ============================================================ */
+/* User Detail Bar */
 #users-detail-bar {
     border-top: 1px solid rgb(var(--border-rgb));
     border-bottom: 1px solid rgb(var(--border-rgb));
@@ -334,6 +356,7 @@ a{
     margin-top: clamp(120px, 18vw, 220px);
 }
 
+/* User Detail Box */
 #user-detail-box {
     width: min(95%, 1300px);
     display: grid;
@@ -342,6 +365,7 @@ a{
     text-align: center;
 }
 
+/* User Detail Box Number */
 .user-detail-box-number {
     font-size: clamp(30px, 4.5vw, 56px);
     font-weight: 800;
@@ -349,15 +373,14 @@ a{
     line-height: 1;
 }
 
+/* User Detail Box Description */
 .user-detail-box-description {
     font-size: clamp(10px, .9vw, 13px);
     margin-top: 6px;
     letter-spacing: 1px;
 }
 
-/* ============================================================
-   WHY SECTION
-   ============================================================ */
+/* Why Section */
 #why-section {
     position: relative;
     display: flex;
@@ -368,21 +391,25 @@ a{
     padding: 0 20px;
 }
 
+/* Why Green Shadow Upper */
 .why-green-shadow-upper {
     left: -50px;
     top: 120px;
 }
 
+/* Why Green Shadow Lower */
 .why-green-shadow-lower {
     bottom: 0;
     right: 0;
 }
 
+/* Why Blue Shadow */
 .why-blue-shadow-middle {
     bottom: 50px;
     left: 39%;
 }
 
+/* Why Section Inner */
 #why-section-inner {
     margin: 60px 0 40px;
     width: min(95%, 1300px);
@@ -391,6 +418,7 @@ a{
     align-items: center;
 }
 
+/* Why Section Box */
 .why-section-box {
     display: flex;
     flex-direction: column;
@@ -400,14 +428,17 @@ a{
     text-align: center;
 }
 
+/* Why Section Head */
 .why-section-head {
     text-align: center;
 }
 
+/* Why Section Line */
 .why-section-line {
     font-size: clamp(26px, 4.5vw, 62px);
 }
 
+/* Why Section Line */
 .why-section-line2 {
     font-size: clamp(13px, 1.1vw, 15px);
     line-height: 1.7;
@@ -415,6 +446,7 @@ a{
     margin: 0 auto;
 }
 
+/* Colorful Circle */
 .colorful-cirlce {
     width: 130px;
     height: 3px;
@@ -432,6 +464,7 @@ a{
     width: 100%;
 }
 
+/* Why Section Boxes */
 .why-section-boxes {
     padding: clamp(18px, 2vw, 28px) clamp(16px, 1.8vw, 26px);
     border-radius: 36px;
@@ -440,6 +473,7 @@ a{
     animation: shadowGlow 4s ease-in-out infinite;
 }
 
+/* Why Section Border Animation */
 @keyframes shadowGlow {
 
     0%,
@@ -460,10 +494,12 @@ a{
     }
 }
 
+/* Why Section Box Divs */
 .why-section-boxes>div {
     margin-top: 12px;
 }
 
+/* Why Section Image Box */
 .why-section-box-image {
     height: 50px;
     width: 50px;
@@ -475,16 +511,19 @@ a{
     margin-top: 0;
 }
 
+/* Why Section Image Box Image */
 .why-section-box-image img {
     height: 24px;
 }
 
+/* Why Section Box Title */
 .why-section-box-title {
     font-size: clamp(16px, 1.6vw, 22px);
     font-weight: 900;
     color: var(--color-white);
 }
 
+/* Why Section Box Description */
 .why-section-box-description {
     font-size: clamp(12px, 1vw, 14px);
     color: var(--color-grey);
@@ -496,19 +535,19 @@ a{
     border: 1px solid rgba(24, 194, 125, .15);
 }
 
+/* Why Section Blue Box */
 .why-section-blue-box {
     background: rgba(0, 183, 255, .04);
     border: 1px solid rgba(0, 183, 255, .12);
 }
 
-/* ============================================================
-   HOW IT WORKS
-   ============================================================ */
+/* How It Works */
 .how-it-works {
     padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 60px) 0;
     overflow: hidden;
 }
 
+/* How It Works Lower Box */
 .how-it-works-lower {
     width: min(95%, 1300px);
     margin: 0 auto;
@@ -519,6 +558,7 @@ a{
     position: relative;
 }
 
+/* How It Work Box */
 .how-it-work-box {
     display: flex;
     flex-direction: column;
@@ -527,6 +567,7 @@ a{
     position: relative;
 }
 
+/* Work Boxes Line */
 .work-boxes-line {
     position: absolute;
     height: 24px;
@@ -534,14 +575,17 @@ a{
     top: 59px;
 }
 
+/* Work Boxes Line Cyan */
 .work-boxes-line-cyan {
     border-color: var(--color-cyan);
 }
 
+/* Work Boxes Line Green */
 .work-boxes-line-green {
     border-color: var(--color-primary);
 }
 
+/* How it Works Box Number */
 .how-it-work-box-number {
     height: 38px;
     width: 38px;
@@ -554,21 +598,25 @@ a{
     flex-shrink: 0;
 }
 
+/* How It Works Blue */
 .how-box-blue {
     border: 1px solid var(--color-blue);
     color: var(--color-blue);
 }
 
+/* How It Works Cyan */
 .how-box-cyan {
     border: 1px solid var(--color-cyan);
     color: var(--color-cyan);
 }
 
+/* How It Works Green */
 .how-box-green {
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
 }
 
+/* How It Works Box Icon */
 .how-it-work-box-icon {
     height: 58px;
     width: 58px;
@@ -580,10 +628,12 @@ a{
     animation: shadowGlow 4s ease-in-out infinite;
 }
 
+/* How It Works Icon Image */
 .how-it-work-box-icon img {
     height: 28px;
 }
 
+/* How It Work Box Heading */
 .how-it-work-box-head {
     font-size: clamp(12px, 1vw, 14px);
     font-weight: 700;
@@ -591,6 +641,7 @@ a{
     text-align: center;
 }
 
+/* How It Work Box Description */
 .how-it-work-box-description {
     font-size: clamp(11px, .95vw, 13px);
     text-align: center;
@@ -598,12 +649,14 @@ a{
     color: var(--color-grey);
 }
 
+/* How Shadow Blue */
 .how-shadow-blue {
     position: absolute;
     top: -80px;
     left: -80px;
 }
 
+/* How Shadow Green */
 .how-shadow-green {
     position: absolute;
     right: -100px;
@@ -625,17 +678,17 @@ a{
     font-size: clamp(12px, 1vw, 15px);
 }
 
+/* Lower Box */
 .lower-box-sep {
     opacity: .4;
 }
 
+/* Lower Box Star Image */
 .lower-box-star img {
     height: 24px;
 }
 
-/* ============================================================
-   TESTIMONIALS
-   ============================================================ */
+/* Testimonials */
 .Testimonials {
     margin: 60px auto;
     width: min(95%, 1400px);
@@ -646,14 +699,17 @@ a{
     gap: 0;
 }
 
+/* Testimonials Detail Box Span */
 .testomonial-detail-box span {
     font-size: clamp(13px, 1.3vw, 16px);
 }
 
+/* Testimonials Detail Box Image */
 .testomonial-detail-box img {
     height: 22px;
 }
 
+/* Testimonials Main Line */
 .testimonials-main-line {
     margin: 16px 0;
     font-size: clamp(22px, 3.5vw, 40px);
@@ -662,6 +718,7 @@ a{
     text-align: center;
 }
 
+/* Testimonials Container */
 .testimonials-container {
     display: flex;
     gap: clamp(18px, 2.5vw, 50px);
@@ -671,6 +728,7 @@ a{
     margin-top: 20px;
 }
 
+/* Testimonials Box */
 .testimonials-box {
     flex: 0 0 clamp(290px, 32vw, 480px);
     padding: clamp(20px, 2.5vw, 32px);
@@ -685,34 +743,40 @@ a{
     transition: .3s ease;
 }
 
+/* Testimonials Box Hover */
 .testimonials-box:hover {
     transform: translateY(-7px);
     border-color: rgba(0, 255, 153, .2);
     box-shadow: 0 0 20px rgba(0, 255, 153, .08), 0 0 50px rgba(0, 255, 153, .04);
 }
 
+/* Comma Image */
 .comma img {
     width: 36px;
     opacity: .8;
 }
 
+/* Testimonials Box Line */
 .testimonials-box-line {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+/* Testimonials Box Line Span */
 .testimonials-box-line span {
     color: var(--text-secondary);
     font-size: clamp(.82rem, .95vw, .95rem);
     line-height: 1.8;
 }
 
+/* Testimonials Box Line Lower */
 .testimonials-box-line-lower {
     color: var(--color-white) !important;
     font-weight: 500;
 }
 
+/* Testimonials Box People */
 .testimonials-box-people {
     display: flex;
     align-items: flex-end;
@@ -720,6 +784,7 @@ a{
     gap: 12px;
 }
 
+/* Testimonials Box Peopple Left */
 .testimonials-box-people-left {
     width: 52px;
     height: 52px;
@@ -728,12 +793,14 @@ a{
     flex-shrink: 0;
 }
 
+/* Testimonials Box People Left Image */
 .testimonials-box-people-left img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Testimonials Box People middle */
 .testimonials-box-people-middle {
     flex: 1;
     display: flex;
@@ -741,21 +808,25 @@ a{
     gap: 5px;
 }
 
+/* Testimonials People Name */
 .testimonials-people-name {
     color: var(--color-white);
     font-size: .95rem;
     font-weight: 600;
 }
 
+/* Testimonials People Position */
 .testimonials-people-position {
     color: var(--text-grey);
     font-size: .85rem;
 }
 
+/* Testimonials Box People Right Image */
 .testimonials-box-people-right img {
     width: 80px;
 }
 
+/* Controls */
 .controls {
     display: flex;
     justify-content: center;
@@ -763,6 +834,7 @@ a{
     margin-top: 36px;
 }
 
+/* Controls Button */
 .controls button {
     width: 52px;
     height: 52px;
@@ -776,6 +848,7 @@ a{
     transition: .3s;
 }
 
+/* Controls Button Hover */
 .controls button:hover {
     background: --button-green-background;
     color: var(--color-black);
@@ -783,9 +856,7 @@ a{
     box-shadow: 0 0 10px rgba(0, 255, 153, .4), 0 0 30px rgba(0, 255, 153, .15);
 }
 
-/* ============================================================
-   FAQ
-   ============================================================ */
+/* FAQ */
 .faq-container {
     display: flex;
     align-items: center;
@@ -793,10 +864,12 @@ a{
     padding: clamp(20px, 4vw, 60px) 20px;
 }
 
+/* faq Section */
 .faq-section {
     margin-bottom: 10px;
 }
 
+/* faq Container Box */
 .faq-container-box {
     width: min(95%, 1100px);
     margin: 24px 0;
@@ -805,6 +878,7 @@ a{
     gap: clamp(14px, 1.5vw, 24px);
 }
 
+/* Faq Box */
 .faq-box {
     background: rgba(255, 255, 255, .03);
     border: 1px solid rgba(255, 255, 255, .08);
@@ -813,11 +887,13 @@ a{
     transition: .3s;
 }
 
+/* Faq Box Active Effect */
 .faq-box.active {
     border-color: rgba(24, 194, 125, .25);
     box-shadow: 0 0 20px rgba(24, 194, 125, .08), 0 0 40px rgba(24, 194, 125, .04);
 }
 
+/* Faq Questions */
 .faq-question {
     width: 100%;
     border: none;
@@ -830,6 +906,7 @@ a{
     gap: 12px;
 }
 
+/* Faq Left */
 .faq-left {
     display: flex;
     align-items: center;
@@ -837,6 +914,7 @@ a{
     min-width: 0;
 }
 
+/* Faq Icon */
 .faq-icon {
     width: 26px;
     height: 26px;
@@ -852,10 +930,12 @@ a{
     transition: transform .3s;
 }
 
+/* faq Box Active Icon */
 .faq-box.active .faq-icon {
     transform: rotate(45deg);
 }
 
+/* Faq Title */
 .faq-title {
     color: var(--color-white);
     font-size: clamp(13px, 1.1vw, 15px);
@@ -863,20 +943,24 @@ a{
     text-align: left;
 }
 
+/* Faq Arrow */
 .faq-arrow {
     color: var(--icon-grey-color);
     flex-shrink: 0;
     transition: .3s;
 }
 
+/* Faq Box And Arrow Active Effect */
 .faq-box.active .faq-arrow {
     transform: rotate(180deg);
 }
 
+/* Faq Arrow Image */
 .faq-arrow img {
     height: 30px;
 }
 
+/* Faq Answer */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -887,23 +971,24 @@ a{
     transition: max-height .4s ease, padding .4s ease;
 }
 
+/* Faq Box Active and Faq Answer */
 .faq-box.active .faq-answer {
     max-height: 200px;
     padding: 0 clamp(16px, 5vw, 110px) clamp(18px, 2vw, 32px);
 }
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
+/* Contact */
 #contact {
     padding: clamp(70px, 10vw, 140px) 0;
 }
 
+/* Section Container */
 .section-container {
     width: min(90%, 1400px);
     margin: 0 auto;
 }
 
+/* Section Label */
 .section-label {
     color: var(--color-primary);
     font-size: .85rem;
@@ -912,12 +997,14 @@ a{
     margin-bottom: clamp(30px, 5vw, 60px);
 }
 
+/* Contatc Grid */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: clamp(40px, 8vw, 120px);
 }
 
+/* Contact Heading */
 .contact-heading {
     color: var(--color-white);
     font-size: clamp(2rem, 4.5vw, 4rem);
@@ -925,11 +1012,13 @@ a{
     margin-bottom: 24px;
 }
 
+/* contatc Heading Em */
 .contact-heading em {
     font-style: normal;
     color: var(--color-primary);
 }
 
+/* Contatc Sub */
 .contact-sub {
     color: var(--gery-dark);
     line-height: 1.8;
@@ -937,6 +1026,7 @@ a{
     margin-bottom: 40px;
 }
 
+/* Email Direct */
 .email-direct {
     width: fit-content;
     display: flex;
@@ -950,22 +1040,26 @@ a{
     transition: .3s;
 }
 
+/* Email Direct Hover Effect */
 .email-direct:hover {
     color: var(--color-primary);
 }
 
+/* Email Direct SVG */
 .email-direct svg {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
 }
 
+/* Contact Socials */
 .contact-socials {
     display: flex;
     gap: clamp(14px, 2vw, 30px);
     flex-wrap: wrap;
 }
 
+/* Contact Social Link */
 .contact-socials a {
     color: var(--text-grey);
     text-decoration: none;
@@ -974,20 +1068,24 @@ a{
     transition: .3s;
 }
 
+/* Contatc Social Link Hover */
 .contact-socials a:hover {
     color: var(--color-primary);
 }
 
+/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: clamp(22px, 2.5vw, 35px);
 }
 
+/* Form Fields */
 .form-field {
     position: relative;
 }
 
+/* Form Field Input and TextArea */
 .form-field input,
 .form-field textarea {
     width: 100%;
@@ -1000,11 +1098,13 @@ a{
     font-family: inherit;
 }
 
+/* Form TextArea */
 .form-field textarea {
     resize: vertical;
     min-height: 100px;
 }
 
+/* Form Field Label */
 .form-field label {
     position: absolute;
     left: 0;
@@ -1015,6 +1115,7 @@ a{
     font-size: clamp(.85rem, 1vw, 1rem);
 }
 
+/* Form Input and TextArea */
 .form-field input:focus+label,
 .form-field input:not(:placeholder-shown)+label,
 .form-field textarea:focus+label,
@@ -1024,6 +1125,7 @@ a{
     color: var(--color-primary);
 }
 
+/* Field Line */
 .field-line {
     width: 100%;
     height: 1px;
@@ -1031,6 +1133,7 @@ a{
     position: relative;
 }
 
+/* Field Line After */
 .field-line::after {
     content: "";
     position: absolute;
@@ -1042,11 +1145,13 @@ a{
     transition: .4s;
 }
 
+/* Form Field input and textarea */
 .form-field input:focus~.field-line::after,
 .form-field textarea:focus~.field-line::after {
     width: 100%;
 }
 
+/* Button Send */
 .btn-send {
     width: fit-content;
     display: flex;
@@ -1063,30 +1168,32 @@ a{
     transition: .3s;
 }
 
+/* Button Send Hover */
 .btn-send:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(24, 194, 125, .3);
 }
 
+/* Form Status */
 .form-status {
     color: var(--color-primary);
     font-size: .9rem;
 }
 
-/* ============================================================
-   CTA / GET STARTED
-   ============================================================ */
+/* Get Started */
 .cta-section {
     margin: clamp(40px, 6vw, 80px) 0 clamp(60px, 8vw, 120px);
     padding: 0 20px;
 }
 
+/* Get Started Card */
 .cta-card {
     width: min(92%, 960px);
     margin: 0 auto;
     text-align: center;
 }
 
+/* Get Started Badge */
 .cta-badge {
     display: inline-block;
     color: var(--color-primary);
@@ -1096,6 +1203,7 @@ a{
     margin-bottom: clamp(20px, 3vw, 40px);
 }
 
+/* Get Started Heading */
 .cta-heading {
     color: var(--color-white);
     font-size: clamp(1.8rem, 4.5vw, 4.2rem);
@@ -1103,6 +1211,7 @@ a{
     margin-bottom: 16px;
 }
 
+/* Get Started Subheading */
 .cta-subheading {
     max-width: 650px;
     margin: 0 auto;
@@ -1111,6 +1220,7 @@ a{
     line-height: 1.8;
 }
 
+/* Get Started Buttons */
 .cta-buttons {
     margin-top: clamp(24px, 3vw, 40px);
     display: flex;
@@ -1120,6 +1230,7 @@ a{
     flex-wrap: wrap;
 }
 
+/* Get Primary Button */
 .cta-primary-btn {
     padding: clamp(12px, 1.3vw, 16px) clamp(18px, 2vw, 28px);
     border-radius: 14px;
@@ -1132,11 +1243,13 @@ a{
     white-space: nowrap;
 }
 
+/* Get Primary Button Hover */
 .cta-primary-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(24, 194, 125, .25);
 }
 
+/* Get Started Secondary Button */
 .cta-secondary-btn {
     padding: clamp(12px, 1.3vw, 16px) clamp(16px, 1.8vw, 24px);
     border-radius: 14px;
@@ -1148,17 +1261,20 @@ a{
     white-space: nowrap;
 }
 
+/* Get Started Secondary Button Hover */
 .cta-secondary-btn:hover {
     border-color: rgba(24, 194, 125, .2);
     color: var(--color-white);
 }
 
+/* Get Started Text */
 .cta-text {
     margin-top: 18px;
     color: var(--text-dark);
     font-size: clamp(.82rem, .95vw, .95rem);
 }
 
+/* Get Started Trust */
 .cta-trust {
     margin-top: clamp(30px, 4vw, 50px);
     display: flex;
@@ -1167,12 +1283,14 @@ a{
     gap: clamp(14px, 2vw, 25px);
 }
 
+/* Get Started Trust Pill */
 .trust-pill {
     color: var(--text-soft);
     font-size: clamp(.8rem, .9vw, .9rem);
     position: relative;
 }
 
+/* Get Started Trust Pill Before */
 .trust-pill::before {
     content: "";
     width: 6px;
@@ -1183,10 +1301,6 @@ a{
     margin-right: 9px;
     margin-bottom: 2px;
 }
-
-/* ============================================================
-   RESPONSIVE — BREAKPOINTS
-   ============================================================ */
 
 /* ── 1440px wide: big desktop ── */
 @media (min-width: 1440px) {
