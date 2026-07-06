@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | BalanceSplitter</title>
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../css/Dashboard.css"> -->
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-logo">
+                    <img src="../images/logo.png" alt="BalanceSplitter Logo">
+                    <h2>Balance<span>Splitter</span></h2>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa-solid fa-table-columns"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-users"></i>
+                                <span>My Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-wallet"></i>
+                                <span>Expenses</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <span>Balances</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Payments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-user-group"></i>
+                                <span>Friends</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Activity</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-regular fa-bell"></i>
+                                <span>Notifications</span>
+                                <span class="nav-badge">5</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-bottom">
+                <a href="#">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Help Center</span>
+                </a>
+                <a href="#" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search expenses, groups, friends...">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="primary-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Expense</span>
+                    </button>
+                    <button class="header-icon">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-count"></span>
+                    </button>
+                    <button class="header-icon">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="profile">
+                        <button class="profile-btn">
+                            <img src="../images/profile.jpg" alt="Profile">
+                            <div class="user-info">
+                                <span class="user-name">
+                                    Jay Kumawat
+                                </span>
+                            </div>
+                        </button>
+                        <div class="profile-dropdown">
+                            <a href="#">
+                                <i class="fa-regular fa-user"></i>
+                                My Profile
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-wallet"></i>
+                                Wallet
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-credit-card"></i>
+                                Payments
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-users"></i>
+                                Friends
+                            </a>
+                            <a href="#">
+                                <i class="fa-solid fa-gear"></i>
+                                Settings
+                            </a>
+                            <hr>
+                            <a href="#" class="logout">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <section class="page-header">
+                    <div class="page-title">
+                        <h1>
+                            Good Morning,
+                            <span>Jay 👋</span>
+                        </h1>
+                        <p>
+                            Welcome back! Here's a complete overview of your expenses,
+                            balances, groups, recent activity and financial health.
+                        </p>
+                    </div>
+                    <div class="date-card">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>
+                            Friday, 4 July 2026
+                        </span>
+                    </div>
+                </section>
+                <section class="card">
+                    <div
+                        style="display:flex;justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;">
+                        <div>
+                            <span class="badge">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                                Financial Health
+                            </span>
+                            <h2>
+                                You're doing great 🎉
+                            </h2>
+                            <p style=" margin-top:12px; max-width:560px; color:var(--text-muted); line-height:1.8;">
+                                You are owed much more than you owe.
+                                Continue recording expenses and settling payments
+                                regularly to maintain a healthy balance.
+                            </p>
+                        </div>
+                        <div class="grid grid-3">
+                            <div class="card inner-card">
+                                <small style="color:var(--text-muted);">
+                                    Net Balance
+                                </small>
+                                <h2 style="color:var(--green-color);margin-top:8px;">
+                                    +₹12,450
+                                </h2>
+                            </div>
+                            <div class="card inner-card">
+                                <small style="color:var(--text-muted);">
+                                    Monthly Spending
+                                </small>
+                                <h2 style="margin-top:8px;">
+                                    ₹18,400
+                                </h2>
+                            </div>
+                            <div class="card inner-card">
+                                <small style="color:var(--text-muted);">
+                                    Savings
+                                </small>
+                                <h2 style=" color:var(--green-color); margin-top:8px;">
+                                    +18%
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="summary-grid">
+                    <!-- Total Balance -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon balance">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+                            <div class="trend">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                8%
+                            </div>
+                        </div>
+                        <h4>Total Balance</h4>
+                        <h2>₹12,450</h2>
+                        <p>Overall Balance</p>
+                    </div>
+                    <!-- You Owe -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon owe">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </div>
+                            <div class="trend down">
+                                <i class="fa-solid fa-arrow-trend-down"></i>
+                                3%
+                            </div>
+                        </div>
+                        <h4>You Owe</h4>
+                        <h2>₹3,240</h2>
+                        <p>Pending Payments</p>
+                    </div>
+                    <!-- You Receive -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon receive">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                            <div class="trend">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                14%
+                            </div>
+                        </div>
+                        <h4>You Are Owed</h4>
+                        <h2>₹15,690</h2>
+                        <p>Receivable Amount</p>
+                    </div>
+                    <!-- Monthly Spending -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon spending">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="trend">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                5%
+                            </div>
+                        </div>
+                        <h4>Monthly Spending</h4>
+                        <h2>₹18,400</h2>
+                        <p>Current Month</p>
+                    </div>
+                    <!-- Groups -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon groups">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="trend">
+                                +2
+                            </div>
+                        </div>
+                        <h4>Active Groups</h4>
+                        <h2>8</h2>
+                        <p>Running Groups</p>
+                    </div>
+                    <!-- Pending -->
+                    <div class="summary-card">
+                        <div class="summary-top">
+                            <div class="summary-icon pending">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div class="trend down">
+                                5
+                            </div>
+                        </div>
+                        <h4>Pending Settlements</h4>
+                        <h2>5</h2>
+                        <p>Need Attention</p>
+                    </div>
+                </section>
+                <section class="quick-actions">
+                    <div class="section-title">
+                        <div>
+                            <h2>Quick Actions</h2>
+                            <p>
+                                Frequently used actions for faster expense management.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="action-grid">
+                        <!-- Add Expense -->
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Add Expense</h3>
+                                <p>
+                                    Record a new shared expense instantly.
+                                </p>
+                            </div>
+                            <div class="action-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <!-- Create Group -->
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Create Group</h3>
+                                <p>
+                                    Create a new expense group with friends or family.
+                                </p>
+                            </div>
+                            <div class="action-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <!-- Settle Up -->
+                        <div class="action-card">
+                            <div class="action-icon">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>Settle Up</h3>
+                                <p>
+                                    Clear pending balances quickly and securely.
+                                </p>
+                            </div>
+                            <div class="action-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="recent-expenses">
+                    <div class="expenses-header">
+                        <h2>Recent Expenses</h2>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="expense-table">
+                            <thead>
+                                <tr>
+                                    <th>Expense</th>
+                                    <th>Group</th>
+                                    <th>Paid By</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="expense-info">
+                                            <div class="expense-icon food">
+                                                <i class="fa-solid fa-utensils"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Dinner at BBQ Nation</h4>
+                                                <span>Food & Dining</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Goa Trip</td>
+                                    <td>You</td>
+                                    <td class="amount">₹2,150</td>
+                                    <td>Today</td>
+                                    <td>
+                                        <span class="status settled">
+                                            Settled
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="table-action">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="expense-info">
+                                            <div class="expense-icon subscription">
+                                                <i class="fa-solid fa-film"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Netflix Subscription</h4>
+                                                <span>Entertainment</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Roommates</td>
+                                    <td>Rahul</td>
+                                    <td class="amount">₹649</td>
+                                    <td>Yesterday</td>
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="table-action">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="expense-info">
+                                            <div class="expense-icon shopping">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Groceries</h4>
+                                                <span>Shopping</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Flatmates</td>
+                                    <td>You</td>
+                                    <td class="amount">₹3,420</td>
+                                    <td>03 Jul</td>
+                                    <td>
+                                        <span class="status settled">
+                                            Settled
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="table-action">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="expense-info">
+                                            <div class="expense-icon travel">
+                                                <i class="fa-solid fa-gas-pump"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Fuel Expense</h4>
+                                                <span>Travel</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Weekend Ride</td>
+                                    <td>Aman</td>
+                                    <td class="amount">₹1,180</td>
+                                    <td>02 Jul</td>
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="table-action">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="expense-info">
+                                            <div class="expense-icon entertainment">
+                                                <i class="fa-solid fa-ticket"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Movie Tickets</h4>
+                                                <span>Entertainment</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Friends</td>
+                                    <td>Priya</td>
+                                    <td class="amount">₹960</td>
+                                    <td>01 Jul</td>
+                                    <td>
+                                        <span class="status settled">
+                                            Settled
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="table-action">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="analytics-section">
+                    <div class="analytics-card">
+                        <div class="analytics-header">
+                            <div>
+                                <h2>Spending Analytics</h2>
+                                <p>
+                                    Overview of your monthly expenses.
+                                </p>
+                            </div>
+                            <button class="chart-filter">
+                                This Month
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <!-- Chart -->
+                        <div class="chart">
+                            <div class="bar" style="height:35%;" data-value="₹3.2K"></div>
+                            <div class="bar" style="height:55%;" data-value="₹5.1K"></div>
+                            <div class="bar active" style="height:82%;" data-value="₹8.4K"></div>
+                            <div class="bar" style="height:60%;" data-value="₹6.0K"></div>
+                            <div class="bar" style="height:72%;" data-value="₹7.2K"></div>
+                            <div class="bar" style="height:48%;" data-value="₹4.8K"></div>
+                            <div class="bar" style="height:65%;" data-value="₹6.5K"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Jan</span>
+                            <span>Feb</span>
+                            <span>Mar</span>
+                            <span>Apr</span>
+                            <span>May</span>
+                            <span>Jun</span>
+                            <span>Jul</span>
+                        </div>
+                        <div class="chart-legend">
+                            <div>
+                                <span class="current"></span>
+                                Current Month
+                            </div>
+                            <div>
+                                <span class="previous"></span>
+                                Previous Month
+                            </div>
+                        </div>
+                        <div class="chart-stats">
+                            <div class="chart-stat">
+                                <h4>Total Spending</h4>
+                                <h3>₹18,400</h3>
+                                <span>+12%</span>
+                            </div>
+                            <div class="chart-stat">
+                                <h4>Transactions</h4>
+                                <h3>128</h3>
+                                <span>+8%</span>
+                            </div>
+                            <div class="chart-stat">
+                                <h4>Average Expense</h4>
+                                <h3>₹1,245</h3>
+                                <span>+5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-sidebar">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3>Balance Overview</h3>
+                                <a href="#">View All</a>
+                            </div>
+                            <div class="people-list">
+                                <div class="person">
+                                    <div class="person-left">
+                                        <img src="../images/user-1.jpg" class="person-avatar" alt="">
+                                        <div class="person-info">
+                                            <h4>Rahul Sharma</h4>
+                                            <p>Flatmates</p>
+                                        </div>
+                                    </div>
+                                    <div class="person-right">
+                                        <span>₹1,250</span>
+                                        <button>Settle</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="person-left">
+                                        <img src="../images/user-2.jpg" class="person-avatar" alt="">
+                                        <div class="person-info">
+                                            <h4>Aman Verma</h4>
+                                            <p>Goa Trip</p>
+                                        </div>
+                                    </div>
+                                    <div class="person-right">
+                                        <span>₹780</span>
+                                        <button>Settle</button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="person-left">
+                                        <img src="../images/user-3.jpg" class="person-avatar" alt="">
+                                        <div class="person-info">
+                                            <h4>Priya Singh</h4>
+                                            <p>Weekend Trip</p>
+                                        </div>
+                                    </div>
+                                    <div class="person-right">
+                                        <span>₹2,100</span>
+                                        <button class="remind">
+                                            Remind
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="person">
+                                    <div class="person-left">
+                                        <img src="../images/user-4.jpg" class="person-avatar" alt="">
+                                        <div class="person-info">
+                                            <h4>Karan Mehta</h4>
+                                            <p>Office Team</p>
+                                        </div>
+                                    </div>
+                                    <div class="person-right">
+                                        <span>₹640</span>
+                                        <button class="remind">
+                                            Remind
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3>Active Groups</h3>
+                                <a href="#">View All</a>
+                            </div>
+                            <div class="group-list">
+                                <div class="group">
+                                    <div class="group-left">
+                                        <div class="group-icon">
+                                            <i class="fa-solid fa-plane"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h4>Goa Trip</h4>
+                                            <p>8 Members</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-badge">
+                                        ₹18K
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="group-left">
+                                        <div class="group-icon">
+                                            <i class="fa-solid fa-house"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h4>Flatmates</h4>
+                                            <p>5 Members</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-badge">
+                                        ₹9K
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="group-left">
+                                        <div class="group-icon">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+                                        <div class="group-info">
+                                            <h4>Office Team</h4>
+                                            <p>12 Members</p>
+                                        </div>
+                                    </div>
+                                    <div class="group-badge">
+                                        ₹12K
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="activity-section">
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#">View All</a>
+                        </div>
+                        <div class="people-list">
+                            <div class="person">
+                                <div class="person-left">
+                                    <div class="group-icon">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <div class="person-info">
+                                        <h4>Expense Added</h4>
+                                        <p>You added Dinner at BBQ Nation</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>2 min ago</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <div class="group-icon">
+                                        <i class="fa-solid fa-money-bill-transfer"></i>
+                                    </div>
+                                    <div class="person-info">
+                                        <h4>Payment Received</h4>
+                                        <p>Rahul paid ₹1,250</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>Today</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <div class="group-icon">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div class="person-info">
+                                        <h4>New Member Joined</h4>
+                                        <p>Priya joined Goa Trip</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <div class="group-icon">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <div class="person-info">
+                                        <h4>Settlement Completed</h4>
+                                        <p>Aman settled ₹780</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>03 Jul</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3>Recent Payments</h3>
+                            <a href="#">View All</a>
+                        </div>
+                        <div class="people-list">
+                            <div class="person">
+                                <div class="person-left">
+                                    <img src="../images/user-1.jpg" class="person-avatar" alt="">
+                                    <div class="person-info">
+                                        <h4>Rahul Sharma</h4>
+                                        <p>Paid via UPI</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>₹1,250</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <img src="../images/user-2.jpg" class="person-avatar" alt="">
+                                    <div class="person-info">
+                                        <h4>Priya Singh</h4>
+                                        <p>Paid via Bank</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>₹960</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <img src="../images/user-3.jpg" class="person-avatar" alt="">
+                                    <div class="person-info">
+                                        <h4>Aman Verma</h4>
+                                        <p>Paid via Cash</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>₹780</span>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <div class="person-left">
+                                    <img src="../images/user-4.jpg" class="person-avatar" alt="">
+                                    <div class="person-info">
+                                        <h4>Karan Mehta</h4>
+                                        <p>Paid via UPI</p>
+                                    </div>
+                                </div>
+                                <div class="person-right">
+                                    <span>₹640</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer style="margin-top:30px; padding:24px 0;border-top:1px solid var(--border);text-align:center;">
+                    <p style="color:var(--text-muted);font-size:.9rem;">
+                        © 2026 BalanceSplitter.
+                        Built with ❤️ for smarter expense sharing.
+                    </p>
+                </footer>
+            </div>
+            <!-- End Content -->
+        </main>
+        <!-- End Main -->
+    </div>
+    <!-- End Dashboard -->
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
