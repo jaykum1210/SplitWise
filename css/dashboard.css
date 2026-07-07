@@ -1571,7 +1571,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
 }
 
 /* Analytics Header Heading */
@@ -1617,12 +1617,12 @@ input {
 /* Chart Box */
 .chart {
     position: relative;
-    height: 210px;
+    height: 310px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     gap: 14px;
-    padding: 0 6px 28px;
+    padding:20px 6px 28px 0px;
     border-bottom: 1px solid var(--border);
 }
 
@@ -1637,6 +1637,7 @@ input {
             transparent 49px,
             rgba(255, 255, 255, .04) 50px);
     pointer-events: none;
+
 }
 
 /* Bar */
